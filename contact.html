@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Kyle Guilfoyle | Restaurant Growth Engineer</title>
+    
+    <!-- Analytics Implementation -->
+    <script src="analytics.js" defer></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Contact page specific styles */
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        /* Hero split layout */
+        .hero-split {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1200px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+            max-width: 550px;
+        }
+
+        .hero-calendar {
+            flex: 1;
+            max-width: 500px;
+            background: transparent;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            border: 1px solid rgba(26, 71, 42, 0.08);
+            margin-right: 20px;
+            height: auto;
+        }
+
+        /* HighLevel calendar customization */
+        #msgsndr-calendar {
+            height: 520px !important; /* Force a fixed height */
+            min-height: 0 !important;
+            max-height: 520px !important;
+            width: 100% !important;
+            border: none !important;
+            overflow: hidden !important;
+        }
+
+        /* Remove any extra space from the <br> element */
+        .calendar-wrapper br {
+            display: none;
+        }
+
+        /* Hide any scrollbars that might appear */
+        .calendar-wrapper {
+            width: 100%;
+            height: auto;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+
+        .calendar-wrapper::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome/Safari */
+        }
+
+        .calendar-wrapper {
+            -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+            scrollbar-width: none;  /* Hide scrollbar for Firefox */
+        }
+
+        .calendar-wrapper iframe {
+            width: 100%;
+            height: 520px; /* Fixed height */
+            border: none;
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+            margin-top: -15px;
+            background: transparent;
+        }
+
+        /* Text colors for Growth Blueprint */
+        h1 span {
+            color: #B7783D; /* Warmer accent for 'Blueprint' */
+        }
+
+        /* Blueprint Features */
+        .blueprint-features {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .blueprint-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            color: var(--dark-green);
+        }
+
+        .feature-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero-split {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+                max-width: 100%;
+            }
+
+            .blueprint-features {
+                align-items: center;
+            }
+
+            .hero-calendar {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-cards {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(26, 71, 42, 0.08);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            border-color: rgba(26, 71, 42, 0.15);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .card-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .contact-card h3 {
+            font-family: 'Fraunces', serif;
+            color: var(--dark-green);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .contact-card p {
+            color: var(--light-green);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .contact-link {
+            display: inline-block;
+            color: #B7783D;
+            font-weight: 600;
+            text-decoration: none;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            border-color: #B7783D;
+        }
+
+        .contact-form-container {
+            flex: 2;
+            min-width: 400px;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(26, 71, 42, 0.08);
+        }
+
+        .contact-form-container h2 {
+            font-family: 'Fraunces', serif;
+            color: var(--dark-green);
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .form-intro {
+            color: var(--light-green);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 0 10px;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 1rem;
+            color: var(--dark-green);
+            border-bottom: 1px solid #E0E0E0;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            color: #AAA;
+            pointer-events: none;
+            transition: 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group input:valid,
+        .form-group textarea:valid {
+            border-color: var(--dark-green);
+        }
+
+        .form-group input:focus ~ label,
+        .form-group textarea:focus ~ label,
+        .form-group input:valid ~ label,
+        .form-group textarea:valid ~ label {
+            top: -10px;
+            font-size: 0.8rem;
+            color: var(--dark-green);
+        }
+
+        .form-border {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #B7783D;
+            transition: width 0.3s ease;
+        }
+
+        .form-group input:focus ~ .form-border,
+        .form-group textarea:focus ~ .form-border {
+            width: 100%;
+        }
+
+        .submit-button {
+            background: var(--dark-green);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: #B7783D;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                flex-direction: column;
+            }
+
+            .contact-form-container {
+                min-width: auto;
+            }
+        }
+
+        /* Update SVG colors to match copper/bronze accent */
+        .contact-card .card-icon svg path {
+            stroke: #B7783D;
+        }
+        
+        /* Add subtle background elements to match screenshot */
+        .hero {
+            position: relative;
+            overflow: visible;
+            padding: 0 20px;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 60px;
+            height: 60px;
+            background: rgba(183, 120, 61, 0.1);
+            border-radius: 30%;
+            transform: rotate(15deg);
+            z-index: 0;
+        }
+        
+        /* Removing the green blob by deleting the ::after pseudo-element */
+        
+        /* Adjust floating emojis to prevent cutoff */
+        .floating-emoji {
+            position: absolute;
+            font-size: 32px;
+            opacity: 0.7;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.15));
+            animation: float 12s ease-in-out infinite, spin 30s linear infinite;
+            z-index: 1; 
+            transform-origin: center;
+            transition: all 0.3s ease;
+        }
+
+        /* Adjust emoji positions to prevent cutoff */
+        .hero-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 80px 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- SVG Filters -->
+    <svg class="svg-defs">
+        <defs>
+            <filter id="sketchy">
+                <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">KYLE GUILFOYLE</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="index.html#topics">Topics</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-wrapper">
+        <section class="hero">
+            <!-- Food Emojis -->
+            <span class="floating-emoji small" style="top: 15%; left: 15%; animation-delay: 0s;">🍜</span>
+            <span class="floating-emoji" style="top: 75%; left: 12%; animation-delay: 2s;">🥢</span>
+            <span class="floating-emoji small" style="top: 25%; right: 15%; animation-delay: 1s;">🍱</span>
+            <span class="floating-emoji" style="top: 82%; right: 18%; animation-delay: 3s;">🍵</span>
+            <span class="floating-emoji small" style="top: 45%; left: 18%; animation-delay: 1.5s;">🍣</span>
+            <span class="floating-emoji large" style="top: 35%; right: 12%; animation-delay: 2.5s;">🥘</span>
+            <span class="floating-emoji small" style="top: 85%; right: 30%; animation-delay: 0.5s;">🥗</span>
+            <span class="floating-emoji" style="top: 20%; left: 25%; animation-delay: 3.5s;">🍚</span>
+            <span class="floating-emoji small" style="top: 70%; left: 30%; animation-delay: 4s;">🥄</span>
+            <span class="floating-emoji large" style="top: 50%; right: 22%; animation-delay: 1.8s;">🍲</span>
+
+            <div class="hero-content hero-split">
+                <div class="hero-text">
+                    <h1>Get Your <span style="color:var(--dark-green);">Restaurant</span><br><span style="color:#B7783D;">Growth Blueprint</span></h1>
+                    <p>Schedule a 15-minute clarity session to identify your restaurant's unique growth opportunities and create a profitable, sustainable system for growth.</p>
+                    <div class="blueprint-features">
+                        <div class="blueprint-feature">
+                            <span class="feature-icon">🔍</span>
+                            <span>Find your hidden growth levers</span>
+                        </div>
+                        <div class="blueprint-feature">
+                            <span class="feature-icon">🚀</span>
+                            <span>Get actionable next steps</span>
+                        </div>
+                        <div class="blueprint-feature">
+                            <span class="feature-icon">⏱️</span>
+                            <span>15 minutes, zero obligation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-calendar">
+                    <div class="calendar-wrapper">
+                        <iframe src="https://api.leadconnectorhq.com/widget/booking/0pnYrjzzGgMExaZw3vZD" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="0pnYrjzzGgMExaZw3vZD_1742911360670"></iframe><br>
+                        <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="contact-container">
+            <div class="contact-content">
+                <!-- Removed contact cards section as requested -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Kyle Guilfoyle. All rights reserved.</p>
+            <div class="social-links">
+                <a href="thoughts.html">Thoughts</a>
+                <a href="https://www.linkedin.com/in/kyle-guilfoyle/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://x.com/KyleGuilfoyle" target="_blank" rel="noopener noreferrer">X</a>
+                <a href="https://www.instagram.com/kyleguilfoyle/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.youtube.com/@kyleguilfoyle" target="_blank" rel="noopener noreferrer">YouTube</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- HighLevel Integration -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://api.highlevel.com/analytics/v1/YOUR_LOCATION_ID.js');
+    </script>
+    <script src="forms.js"></script>
+
+    <script>
+        // Fix calendar iframe styling to remove extra space
+        document.addEventListener('DOMContentLoaded', function() {
+            // Updated ID based on new calendar code
+            const calendarIframeId = '0pnYrjzzGgMExaZw3vZD_1742911360670';
+            const calendarIframe = document.getElementById(calendarIframeId);
+            
+            // Function to adjust the iframe
+            function adjustIframe(iframe) {
+                if (!iframe) return;
+                
+                try {
+                    // Try to access iframe content
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    
+                    // Try to make backgrounds transparent
+                    if (iframeDoc && iframeDoc.body) {
+                        // Apply styles to the iframe body
+                        let styleTag = iframeDoc.createElement('style');
+                        styleTag.textContent = `
+                            body, html { 
+                                background: transparent !important; 
+                                margin-bottom: 0 !important;
+                                padding-bottom: 0 !important;
+                                overflow: hidden !important;
+                            }
+                            .ui-datepicker-header, .msgsndr-calendar-header {
+                                background-color: #1A472A !important;
+                                color: white !important;
+                            }
+                            .msgsndr-calendar-selection, .msgsndr-calendar-selection-title {
+                                color: #1A472A !important;
+                            }
+                            .active, .ui-datepicker-current-day a, .ui-state-active, .ui-datepicker-current-day {
+                                background-color: #1A472A !important;
+                                border-color: #1A472A !important;
+                            }
+                            .msgsndr-color-primary, .msgsndr-timezone-select {
+                                color: #B7783D !important;
+                            }
+                            .msgsndr-bg-primary, .msgsndr-button, .msgsndr-brand-btn {
+                                background-color: #B7783D !important;
+                            }
+                            /* Hide any extra padding or margins */
+                            .msgsndr-widget-container {
+                                padding-bottom: 0 !important;
+                                margin-bottom: 0 !important;
+                            }
+                        `;
+                        iframeDoc.head.appendChild(styleTag);
+                    }
+                } catch (e) {
+                    // Cross-origin restrictions may prevent access to iframe content
+                    console.log("Couldn't access iframe content due to cross-origin restrictions");
+                }
+            }
+            
+            // Watch for any new iframes that might be created during the load process
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'childList') {
+                        // Check for any iframe in the calendar wrapper
+                        const iframes = document.querySelectorAll('.calendar-wrapper iframe');
+                        iframes.forEach(iframe => {
+                            iframe.style.height = '520px';
+                            iframe.style.width = '100%';
+                            iframe.style.border = 'none';
+                            iframe.style.overflow = 'hidden';
+                            adjustIframe(iframe);
+                        });
+                    }
+                });
+            });
+            
+            // Watch for changes to the calendar wrapper
+            observer.observe(document.querySelector('.calendar-wrapper'), { childList: true, subtree: true });
+            
+            // If the initial iframe exists, set up event listeners
+            if (calendarIframe) {
+                // Try to adjust on load
+                calendarIframe.addEventListener('load', function() {
+                    setTimeout(() => adjustIframe(calendarIframe), 500);
+                });
+            }
+            
+            // Also try adjusting after delays for any iframe that might be present
+            setTimeout(() => {
+                const latestFrame = document.getElementById(calendarIframeId) || 
+                                   document.querySelector('.calendar-wrapper iframe');
+                if (latestFrame) adjustIframe(latestFrame);
+            }, 1000);
+            
+            setTimeout(() => {
+                const latestFrame = document.getElementById(calendarIframeId) || 
+                                   document.querySelector('.calendar-wrapper iframe');
+                if (latestFrame) adjustIframe(latestFrame);
+            }, 2000);
+        });
+    </script>
+</body>
+</html> 
