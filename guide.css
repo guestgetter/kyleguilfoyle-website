@@ -138,6 +138,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    min-height: 100vh;
+    align-items: start;
 }
 
 /* Main Content Styles */
@@ -250,20 +252,22 @@ body {
 
 /* Sticky Sidebar */
 .guide-sidebar {
-    position: sticky;
-    top: 2rem;
-    height: fit-content;
+    position: sticky !important;
+    top: 6rem !important;
+    height: max-content;
     padding: 2rem;
     border-radius: 16px;
     background: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    align-self: flex-start;
 }
 
 .sidebar-content {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    max-height: calc(100vh - 6rem);
+    max-height: calc(100vh - 10rem);
     overflow-y: auto;
 }
 
@@ -470,11 +474,12 @@ body {
 @media (max-width: 992px) {
     .guide-container {
         grid-template-columns: 1fr;
+        min-height: auto;
     }
     
     .guide-sidebar {
-        position: relative;
-        top: 0;
+        position: relative !important;
+        top: 0 !important;
         margin-top: 3rem;
         max-width: 400px;
         margin-left: auto;
