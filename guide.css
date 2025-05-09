@@ -7,6 +7,11 @@
     --cream-darker: #E5DED1;
     --dark-green: #1A472A;
     --navbar-height: 4rem;
+    --accent: #FF6B6B;
+    --text: #2C3E50;
+    --bg: #FFFFFF;
+    --border: rgba(0, 0, 0, 0.1);
+    --shadow: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -140,6 +145,26 @@ body {
     font-size: 1.125rem;
     line-height: 1.7;
     max-width: 680px;
+}
+
+/* Video Container for Responsive Embeds */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin: 2rem 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
 }
 
 .guide-content section {
