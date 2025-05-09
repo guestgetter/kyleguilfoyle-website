@@ -251,8 +251,8 @@ body {
 /* Sticky Sidebar */
 .guide-sidebar {
     position: sticky;
-    top: 5rem;
-    height: auto;
+    top: 2rem;
+    height: fit-content;
     padding: 2rem;
     border-radius: 16px;
     background: white;
@@ -263,7 +263,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    max-height: calc(100vh - 8rem);
+    max-height: calc(100vh - 6rem);
     overflow-y: auto;
 }
 
@@ -537,40 +537,5 @@ body {
 
     .social-links {
         justify-content: center;
-    }
-}
-
-/* Alternative Flexbox Layout */
-.guide-container-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.guide-container-flex .guide-content {
-    flex: 1;
-    min-width: 0;
-    max-width: 680px;
-}
-
-.guide-container-flex .guide-sidebar {
-    width: 400px;
-    margin-left: 4rem;
-}
-
-@media (max-width: 992px) {
-    .guide-container-flex {
-        flex-direction: column;
-    }
-    
-    .guide-container-flex .guide-content {
-        max-width: 100%;
-    }
-    
-    .guide-container-flex .guide-sidebar {
-        width: 100%;
-        max-width: 400px;
-        margin-left: 0;
-        margin-right: 0;
     }
 } 
