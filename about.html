@@ -5,6 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Kyle Guilfoyle | Restaurant Growth Engineer</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon/kg_favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <meta name="theme-color" content="#1A472A">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kyleguilfoyle.com/about.html">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn about Kyle Guilfoyle, a restaurant growth engineer who helps restaurant owners build systematic growth engines for predictable success.">
+    <meta name="keywords" content="Kyle Guilfoyle, restaurant growth, restaurant marketing, restaurant consulting">
+    <meta name="author" content="Kyle Guilfoyle">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About - Kyle Guilfoyle | Restaurant Growth Engineer">
+    <meta property="og:description" content="Learn about Kyle Guilfoyle, a restaurant growth engineer who helps restaurant owners build systematic growth engines for predictable success.">
+    <meta property="og:image" content="https://kyleguilfoyle.com/kyle-guilfoyle-headshot.jpg">
+    <meta property="og:url" content="https://kyleguilfoyle.com/about.html">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kyle Guilfoyle",
+      "url": "https://kyleguilfoyle.com",
+      "image": "https://kyleguilfoyle.com/kyle-guilfoyle-headshot.jpg",
+      "jobTitle": "Restaurant Growth Engineer",
+      "description": "Kyle Guilfoyle helps restaurant owners transform their businesses from unpredictable and stressful into systematic growth engines.",
+      "alumniOf": [
+        {
+          "@type": "Organization",
+          "name": "Restaurant Marketing Agency"
+        }
+      ],
+      "knowsAbout": ["Restaurant Growth Systems", "AI Integration", "Automation Architecture", "Story Systems", "Data-Driven Growth", "Experience Design"],
+      "sameAs": [
+        "https://www.linkedin.com/in/kyle-guilfoyle/",
+        "https://x.com/KyleGuilfoyle",
+        "https://www.instagram.com/kyleguilfoyle/",
+        "https://www.youtube.com/@kyleguilfoyle"
+      ]
+    }
+    </script>
+    
     <!-- Analytics Implementation -->
     <script src="analytics.js" defer></script>
     
@@ -14,23 +63,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Serif+Display&display=swap" rel="stylesheet">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/restaurant-growth-favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#FF5F6D">
-    <meta name="theme-color" content="#FF5F6D">
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-content">
-            <a href="index.html" class="logo">Kyle Guilfoyle</a>
-            <div class="nav-links">
-                <a href="about.html" class="active">About</a>
-                <a href="index.html#topics">Topics</a>
-                <a href="contact.html">Contact</a>
+        <a href="index.html" class="logo">KYLE GUILFOYLE</a>
+        <button class="mobile-nav-toggle mobile-visible" aria-label="Open mobile menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="nav-links">
+            <a href="about.html" class="active">About</a>
+            <a href="index.html#topics">Topics</a>
+            <a href="contact.html">Contact</a>
+            
+            <!-- Social Media Icons - Mobile Only -->
+            <div class="mobile-social-icons">
+                <a href="https://www.instagram.com/kyleguilfoyle/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kyle-guilfoyle/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.tiktok.com/@kyleguilfoyle?lang=en" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </nav>
@@ -150,7 +203,7 @@
                         <p>Developed the Restaurant Growth Engineering methodology</p>
                     </div>
                     <div class="timeline-item">
-                        <span class="year">2024</span>
+                        <span class="year">2023</span>
                         <h3>The Movement Grows</h3>
                         <p>Helping restaurant owners worldwide build sustainable growth systems</p>
                     </div>
@@ -261,5 +314,6 @@
     </footer>
 
     <script src="forms.js"></script>
+    <script src="mobile-nav.js"></script>
 </body>
 </html> 

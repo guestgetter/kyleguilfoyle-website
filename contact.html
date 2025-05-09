@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Kyle Guilfoyle | Restaurant Growth Engineer</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon/kg_favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <meta name="theme-color" content="#1A472A">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kyleguilfoyle.com/contact.html">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Contact Kyle Guilfoyle for restaurant growth engineering services, consulting, and to book a discovery call about growing your restaurant.">
+    <meta name="keywords" content="contact Kyle Guilfoyle, restaurant consulting, restaurant growth, growth engineering">
+    <meta name="author" content="Kyle Guilfoyle">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact | Kyle Guilfoyle | Restaurant Growth Engineer">
+    <meta property="og:description" content="Contact Kyle Guilfoyle for restaurant growth engineering services, consulting, and to book a discovery call.">
+    <meta property="og:image" content="https://kyleguilfoyle.com/kyle-guilfoyle-headshot.jpg">
+    <meta property="og:url" content="https://kyleguilfoyle.com/contact.html">
+    
     <!-- Analytics Implementation -->
     <script src="analytics.js" defer></script>
     
@@ -13,14 +36,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/restaurant-growth-favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#FF5F6D">
-    <meta name="theme-color" content="#FF5F6D">
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* Contact page specific styles */
@@ -410,10 +427,22 @@
     <!-- Navigation -->
     <nav class="navbar">
         <a href="index.html" class="logo">KYLE GUILFOYLE</a>
+        <button class="mobile-nav-toggle mobile-visible" aria-label="Open mobile menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
         <div class="nav-links">
             <a href="about.html">About</a>
             <a href="index.html#topics">Topics</a>
             <a href="contact.html" class="active">Contact</a>
+            
+            <!-- Social Media Icons - Mobile Only -->
+            <div class="mobile-social-icons">
+                <a href="https://www.instagram.com/kyleguilfoyle/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kyle-guilfoyle/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.tiktok.com/@kyleguilfoyle?lang=en" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
         </div>
     </nav>
 
@@ -461,15 +490,6 @@
         </section>
     </div>
 
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="contact-container">
-            <div class="contact-content">
-                <!-- Removed contact cards section as requested -->
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -484,7 +504,8 @@
         </div>
     </footer>
     
-    <!-- HighLevel Integration -->
+    <!-- HighLevel Integration - Commented out until proper ID is provided -->
+    <!-- 
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -495,7 +516,9 @@
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://api.highlevel.com/analytics/v1/YOUR_LOCATION_ID.js');
     </script>
+    -->
     <script src="forms.js"></script>
+    <script src="mobile-nav.js"></script>
 
     <script>
         // Fix calendar iframe styling to remove extra space
