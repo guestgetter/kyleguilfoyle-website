@@ -1,0 +1,56 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# Return 410 Gone for all .shtml files (permanent removal)
+RedirectMatch 410 ^/.*\.shtml$
+
+# Block old WordPress paths with 410 Gone status
+RedirectMatch 410 ^/wp-.*$
+RedirectMatch 410 ^/feed/.*$
+RedirectMatch 410 ^/xmlrpc\.php$
+RedirectMatch 410 ^/blog/.*$
+
+# Add correct canonical header for all pages
+<IfModule mod_headers.c>
+    # Set canonical header for homepage
+    <If "%{REQUEST_URI} == '/'">
+        Header set Link "<https://kyleguilfoyle.com/>; rel=\"canonical\""
+    </If>
+    
+    # Canonical for about page
+    <If "%{REQUEST_URI} == '/about.html'">
+        Header set Link "<https://kyleguilfoyle.com/about.html>; rel=\"canonical\""
+    </If>
+    
+    # Canonical for contact page
+    <If "%{REQUEST_URI} == '/contact.html'">
+        Header set Link "<https://kyleguilfoyle.com/contact.html>; rel=\"canonical\""
+    </If>
+</IfModule>
+
+# Prevent directory browsing
+Options -Indexes
+
+# Set security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Block potential vulnerability scanners and known bad bots
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_USER_AGENT} (libwww-perl|MegaIndex|crawler|spider|bot) [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# Ensure all HTML files have proper content type
+<FilesMatch "\.html$">
+    ForceType text/html
+    Header set Content-Type "text/html; charset=UTF-8"
+</FilesMatch>
+
+# Ensure www redirects to non-www
+RewriteCond %{HTTP_HOST} ^www\.kyleguilfoyle\.com [NC]
+RewriteRule (.*) https://kyleguilfoyle.com/$1 [R=301,L] 

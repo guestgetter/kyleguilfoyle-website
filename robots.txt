@@ -1,3 +1,21 @@
 User-agent: *
 Allow: /
+Disallow: /*.shtml$
+
+# Block all bots from accessing these patterns
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*.php$
+Disallow: /wp-*
+
+# Allow Google to index important content
+User-agent: Googlebot
+Allow: /
+Disallow: /*.shtml$
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*.php$
+Disallow: /wp-*
+
+# Sitemap location
 Sitemap: https://kyleguilfoyle.com/sitemap.xml 
