@@ -1,0 +1,9 @@
+# Disavow file for kyleguilfoyle.com
+# Submission date: 2023-05-15
+# Format: domain:example.com or url:http://example.com/page.html
+
+# Hijacked canonical domain
+domain:jimpinson.com
+
+# Add any other suspicious domains from backlink analysis below
+# Example: domain:spamsite.com 

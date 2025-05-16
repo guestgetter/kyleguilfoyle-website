@@ -900,4 +900,132 @@
     .obsessions-wrapper {
         padding: 0 24px;
     }
+}
+
+/* Story Section Styles */
+.story-section {
+    padding: 100px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.story-section h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.5rem;
+    color: var(--dark-green);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.story-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.story-text {
+    flex: 2;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.story-text p,
+.story-text ol {
+    margin-bottom: 1.5rem;
+}
+
+.story-text ol {
+    padding-left: 1.5rem;
+}
+
+.story-image {
+    flex: 1;
+    text-align: center;
+}
+
+.story-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.caption {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .story-content {
+        flex-direction: column;
+    }
+    
+    .story-image {
+        margin-top: 30px;
+    }
+}
+
+/* Newsletter Section Styles */
+.newsletter {
+    padding: 60px 24px;
+    background-color: var(--cream);
+    text-align: center;
+}
+
+.newsletter-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.newsletter h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.2rem;
+    color: var(--dark-green);
+    margin-bottom: 16px;
+}
+
+.newsletter p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.newsletter-button {
+    background-color: var(--dark-green);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 0 4px 4px 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-input {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    
+    .newsletter-button {
+        border-radius: 4px;
+    }
 } 
