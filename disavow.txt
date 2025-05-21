@@ -2,8 +2,9 @@
 # Submission date: 2023-05-15
 # Format: domain:example.com or url:http://example.com/page.html
 
-# Hijacked canonical domain
+# Hijacked canonical domains
 domain:jimpinson.com
+domain:csbnews.org
 
 # Add any other suspicious domains from backlink analysis below
 # Example: domain:spamsite.com 

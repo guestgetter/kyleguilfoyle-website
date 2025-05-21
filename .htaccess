@@ -26,6 +26,26 @@ RedirectMatch 410 ^/blog/.*$
     <If "%{REQUEST_URI} == '/contact.html'">
         Header set Link "<https://kyleguilfoyle.com/contact.html>; rel=\"canonical\""
     </If>
+    
+    # Canonical for thoughts page
+    <If "%{REQUEST_URI} == '/thoughts.html'">
+        Header set Link "<https://kyleguilfoyle.com/thoughts.html>; rel=\"canonical\""
+    </If>
+    
+    # Handle guides directory
+    <If "%{REQUEST_URI} =~ m#^/guides/.*\.html$#">
+        Header set Link "<https://kyleguilfoyle.com%{REQUEST_URI}>; rel=\"canonical\""
+    </If>
+    
+    # Handle thoughts directory
+    <If "%{REQUEST_URI} =~ m#^/thoughts/.*\.html$#">
+        Header set Link "<https://kyleguilfoyle.com%{REQUEST_URI}>; rel=\"canonical\""
+    </If>
+    
+    # Generic rule for all other HTML pages
+    <If "%{REQUEST_URI} =~ m#^/.+\.html$#">
+        Header set Link "<https://kyleguilfoyle.com%{REQUEST_URI}>; rel=\"canonical\""
+    </If>
 </IfModule>
 
 # Prevent directory browsing
