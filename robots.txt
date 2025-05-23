@@ -2,6 +2,15 @@ User-agent: *
 Allow: /
 Disallow: /*.shtml$
 
+# EMERGENCY SPAM BLOCKING - Added May 23, 2025
+Disallow: /*plantronics*
+Disallow: /*diamond*ring*
+Disallow: /*nydj*
+Disallow: /*dragon*ball*
+Disallow: /*lagerfeld*
+Disallow: /*watch*
+Disallow: /*product*description*
+
 # Block all bots from accessing these patterns
 Disallow: /*?*
 Disallow: /*&*
@@ -12,6 +21,13 @@ Disallow: /wp-*
 User-agent: Googlebot
 Allow: /
 Disallow: /*.shtml$
+Disallow: /*plantronics*
+Disallow: /*diamond*ring*
+Disallow: /*nydj*
+Disallow: /*dragon*ball*
+Disallow: /*lagerfeld*
+Disallow: /*watch*
+Disallow: /*product*description*
 Disallow: /*?*
 Disallow: /*&*
 Disallow: /*.php$

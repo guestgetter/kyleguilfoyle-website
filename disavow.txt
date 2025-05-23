@@ -1,10 +1,15 @@
 # Disavow file for kyleguilfoyle.com
-# Submission date: 2023-05-15
+# Last updated: 2025-05-23
+# Resubmitted due to persistent canonical hijacking issues
 # Format: domain:example.com or url:http://example.com/page.html
 
-# Hijacked canonical domains
+# Hijacked canonical domains - IMMEDIATE DISAVOW
 domain:jimpinson.com
 domain:csbnews.org
 
-# Add any other suspicious domains from backlink analysis below
-# Example: domain:spamsite.com 
+# Additional suspicious domains that may be causing canonical issues
+# Check your backlink profile for these patterns:
+# domain:spamsite.com
+# domain:another-spam-domain.com
+
+# End of disavow file
