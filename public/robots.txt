@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+Disallow: /*.shtml$
+
+# EMERGENCY SPAM BLOCKING - Added May 23, 2025
+Disallow: /*plantronics*
+Disallow: /*diamond*ring*
+Disallow: /*nydj*
+Disallow: /*dragon*ball*
+Disallow: /*lagerfeld*
+Disallow: /*watch*
+Disallow: /*product*description*
+
+# Block all bots from accessing these patterns
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*.php$
+Disallow: /wp-*
+
+# Allow Google to index important content
+User-agent: Googlebot
+Allow: /
+Disallow: /*.shtml$
+Disallow: /*plantronics*
+Disallow: /*diamond*ring*
+Disallow: /*nydj*
+Disallow: /*dragon*ball*
+Disallow: /*lagerfeld*
+Disallow: /*watch*
+Disallow: /*product*description*
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*.php$
+Disallow: /wp-*
+
+# Sitemap location
+Sitemap: https://kyleguilfoyle.com/sitemap.xml 
