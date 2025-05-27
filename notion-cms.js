@@ -47,40 +47,49 @@ class NotionCMS {
 
             const response = await this.notion.databases.query({
                 database_id: this.databaseId,
-                filter: {
-                    property: 'Status',
-                    select: {
-                        equals: 'Published'
-                    }
-                },
                 sorts: [
                     {
-                        property: 'Date',
+                        property: 'Publish Date',
                         direction: 'descending'
                     }
                 ]
             });
 
-            return response.results.map(page => {
-                const properties = page.properties;
-                
-                const title = this.extractPlainText(properties.Title?.title || properties.Name?.title);
-                const excerpt = this.extractPlainText(properties.Excerpt?.rich_text);
-                const date = this.formatDate(properties.Date?.date);
-                const slug = properties.Slug?.rich_text ? 
-                    this.extractPlainText(properties.Slug.rich_text) : 
-                    this.createSlug(title);
+            return response.results
+                .filter(page => {
+                    // Filter for published content - handle different Status field types
+                    const status = page.properties.Status;
+                    if (status?.select?.name) {
+                        return status.select.name === 'Published';
+                    } else if (status?.status?.name) {
+                        return status.status.name === 'Published';
+                    } else if (status?.multi_select) {
+                        return status.multi_select.some(s => s.name === 'Published');
+                    }
+                    return false; // If no status or unrecognized format, exclude
+                })
+                .map(page => {
+                    const properties = page.properties;
+                    
+                    const title = this.extractPlainText(properties.Title?.title || properties.Name?.title);
+                    const excerpt = this.extractPlainText(properties.Excerpt?.rich_text);
+                    const date = this.formatDate(properties.Date?.date || properties['Publish Date']?.date);
+                    const slug = properties['URL Slug']?.rich_text ? 
+                        this.extractPlainText(properties['URL Slug'].rich_text) : 
+                        (properties.Slug?.rich_text ? 
+                            this.extractPlainText(properties.Slug.rich_text) : 
+                            this.createSlug(title));
 
-                return {
-                    id: `notion-${page.id}`,
-                    title,
-                    date,
-                    slug,
-                    excerpt,
-                    source: 'notion',
-                    notionId: page.id
-                };
-            });
+                    return {
+                        id: `notion-${page.id}`,
+                        title,
+                        date,
+                        slug,
+                        excerpt,
+                        source: 'notion',
+                        notionId: page.id
+                    };
+                });
         } catch (error) {
             console.error('Error fetching from Notion:', error.message);
             return [];
