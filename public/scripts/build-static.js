@@ -78,6 +78,7 @@ async function buildStatic() {
     // Copy directories
     const directoriesToCopy = [
         'src/thoughts',
+        'src/guides',
         'favicon',
         'scripts',
         'assets'
