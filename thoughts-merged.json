@@ -7,6 +7,7 @@
       "slug": "1m-revenue-growth-operating-systems",
       "excerpt": "\"Documenting my systematic approach to deploying growth operating systems across 100 restaurants, designed to generate predictable revenue and profit increases.”",
       "source": "notion",
+      "contentType": "thought",
       "notionId": "1ff60fed-82e0-8072-a27b-d2b069d29a0f"
     },
     {
@@ -266,7 +267,7 @@
       "source": "local"
     }
   ],
-  "lastUpdated": "2025-05-27T14:47:23.944Z",
+  "lastUpdated": "2025-05-27T14:52:50.512Z",
   "sources": {
     "local": 32,
     "notion": 1

@@ -93,6 +93,60 @@ async function buildStatic() {
         }
     }
     
+    // Fix CSS and JS paths in HTML files after copying
+    const htmlFiles = ['index.html', 'about.html', 'contact.html', 'thoughts.html', '404.html'];
+    
+    for (const htmlFile of htmlFiles) {
+        try {
+            const filePath = path.join(publicDir, htmlFile);
+            let content = await fs.readFile(filePath, 'utf8');
+            
+            // Fix relative paths to absolute paths
+            content = content.replace(/href="style\.css"/g, 'href="/style.css"');
+            content = content.replace(/href="about\.css"/g, 'href="/about.css"');
+            content = content.replace(/src="mobile-nav\.js"/g, 'src="/mobile-nav.js"');
+            content = content.replace(/src="thoughts\.js"/g, 'src="/thoughts.js"');
+            
+            await fs.writeFile(filePath, content);
+            console.log(`✅ Fixed paths in: ${htmlFile}`);
+        } catch (error) {
+            console.log(`⚠️  Could not fix paths in ${htmlFile}:`, error.message);
+        }
+    }
+
+    // Fix paths in thought HTML files
+    try {
+        const thoughtsDir = path.join(publicDir, 'thoughts');
+        const thoughtFiles = await fs.readdir(thoughtsDir);
+        
+        for (const file of thoughtFiles) {
+            if (file.endsWith('.html') && !file.endsWith('.bak')) {
+                const filePath = path.join(thoughtsDir, file);
+                let content = await fs.readFile(filePath, 'utf8');
+                
+                // Fix relative paths to absolute paths for thought pages
+                content = content.replace(/href="\.\.\/style\.css"/g, 'href="/style.css"');
+                content = content.replace(/href="\.\.\/about\.css"/g, 'href="/about.css"');
+                content = content.replace(/src="\.\.\/mobile-nav\.js"/g, 'src="/mobile-nav.js"');
+                content = content.replace(/src="\.\.\/thoughts\.js"/g, 'src="/thoughts.js"');
+                
+                // Fix navigation links
+                content = content.replace(/href="\.\.\/index\.html"/g, 'href="/"');
+                content = content.replace(/href="\.\.\/about\.html"/g, 'href="/about.html"');
+                content = content.replace(/href="\.\.\/contact\.html"/g, 'href="/contact.html"');
+                content = content.replace(/href="\.\.\/thoughts\.html"/g, 'href="/thoughts.html"');
+                
+                // Fix favicon paths
+                content = content.replace(/href="\/favicon\//g, 'href="/favicon/');
+                
+                await fs.writeFile(filePath, content);
+                console.log(`✅ Fixed paths in: thoughts/${file}`);
+            }
+        }
+    } catch (error) {
+        console.log(`⚠️  Could not fix thought file paths:`, error.message);
+    }
+    
     console.log('\n🎉 Static site build complete!');
     console.log('📁 All files copied to public/ directory');
 }

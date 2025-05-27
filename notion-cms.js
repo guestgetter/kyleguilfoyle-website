@@ -71,14 +71,19 @@ class NotionCMS {
                 .map(page => {
                     const properties = page.properties;
                     
-                    const title = this.extractPlainText(properties.Title?.title || properties.Name?.title);
-                    const excerpt = this.extractPlainText(properties.Excerpt?.rich_text);
-                    const date = this.formatDate(properties.Date?.date || properties['Publish Date']?.date);
-                    const slug = properties['URL Slug']?.rich_text ? 
-                        this.extractPlainText(properties['URL Slug'].rich_text) : 
-                        (properties.Slug?.rich_text ? 
-                            this.extractPlainText(properties.Slug.rich_text) : 
-                            this.createSlug(title));
+                                    const title = this.extractPlainText(properties.Title?.title || properties.Name?.title);
+                const excerpt = this.extractPlainText(properties.Excerpt?.rich_text);
+                const date = this.formatDate(properties.Date?.date || properties['Publish Date']?.date);
+                const slug = properties['URL Slug']?.rich_text ? 
+                    this.extractPlainText(properties['URL Slug'].rich_text) : 
+                    (properties.Slug?.rich_text ? 
+                        this.extractPlainText(properties.Slug.rich_text) : 
+                        this.createSlug(title));
+                
+                // Get content type (default to 'thought' if not specified)
+                const contentType = properties['Content Type']?.select?.name || 
+                                  properties['Type']?.select?.name || 
+                                  'thought';
 
                     return {
                         id: `notion-${page.id}`,
@@ -87,6 +92,7 @@ class NotionCMS {
                         slug,
                         excerpt,
                         source: 'notion',
+                        contentType: contentType.toLowerCase(),
                         notionId: page.id
                     };
                 });

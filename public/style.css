@@ -1436,6 +1436,42 @@ body.no-scroll {
     border-left: 3px solid #0369a1;
 }
 
+/* Content Type Badge Styles */
+.content-type-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    margin-left: 0.5rem;
+    background-color: #f3f4f6;
+    color: #6b7280;
+}
+
+.content-type-badge.guide {
+    background-color: #fef3c7;
+    color: #d97706;
+    border: 1px solid #fde68a;
+}
+
+.thought-card.guide {
+    border-left: 3px solid #d97706;
+    background: linear-gradient(135deg, #fffbeb 0%, #fefce8 100%);
+}
+
+.thought-card.guide .thought-title {
+    color: #92400e;
+}
+
+.thought-card.guide .thought-link {
+    color: #d97706;
+    font-weight: 600;
+}
+
+.thought-card.guide .thought-link:hover {
+    color: #92400e;
+}
+
 .thoughts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
