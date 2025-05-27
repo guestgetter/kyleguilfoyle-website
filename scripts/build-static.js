@@ -51,15 +51,15 @@ async function buildStatic() {
     
     // Files to copy to public directory
     const filesToCopy = [
-        'index.html',
-        'about.html',
-        'contact.html',
-        'thoughts.html',
-        '404.html',
-        'style.css',
-        'about.css',
-        'thoughts.json',
-        'thoughts-merged.json',
+        'src/index.html',
+        'src/about.html',
+        'src/contact.html',
+        'src/thoughts.html',
+        'src/404.html',
+        'src/style.css',
+        'src/about.css',
+        'src/thoughts.json',
+        'src/thoughts-merged.json',
         'sitemap.xml',
         'robots.txt'
     ];
@@ -68,7 +68,8 @@ async function buildStatic() {
     for (const file of filesToCopy) {
         try {
             await fs.access(file);
-            await copyFile(file, path.join(publicDir, file));
+            const fileName = path.basename(file);
+            await copyFile(file, path.join(publicDir, fileName));
         } catch (error) {
             console.log(`⚠️  Skipping ${file} (not found)`);
         }
@@ -76,7 +77,7 @@ async function buildStatic() {
     
     // Copy directories
     const directoriesToCopy = [
-        'thoughts',
+        'src/thoughts',
         'favicon',
         'scripts',
         'assets'
@@ -85,7 +86,8 @@ async function buildStatic() {
     for (const dir of directoriesToCopy) {
         try {
             await fs.access(dir);
-            await copyDirectory(dir, path.join(publicDir, dir));
+            const dirName = path.basename(dir);
+            await copyDirectory(dir, path.join(publicDir, dirName));
         } catch (error) {
             console.log(`⚠️  Skipping directory ${dir} (not found)`);
         }

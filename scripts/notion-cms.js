@@ -105,7 +105,7 @@ class NotionCMS {
     // Load existing thoughts.json content
     async loadExistingContent() {
         try {
-            const thoughtsPath = path.join(__dirname, 'thoughts.json');
+            const thoughtsPath = path.join(__dirname, '..', 'src', 'thoughts.json');
             const data = await fs.readFile(thoughtsPath, 'utf8');
             const parsed = JSON.parse(data);
             
@@ -162,7 +162,7 @@ class NotionCMS {
                 const fullHTML = this.generateHTMLTemplate(post, htmlContent);
                 
                 // Write to thoughts directory
-                const filePath = path.join(__dirname, 'thoughts', `${post.slug}.html`);
+                const filePath = path.join(__dirname, '..', 'src', 'thoughts', `${post.slug}.html`);
                 await fs.writeFile(filePath, fullHTML, 'utf8');
                 
                 console.log(`Generated: ${post.slug}.html`);
@@ -366,7 +366,7 @@ class NotionCMS {
             const mergedContent = await this.generateMergedContent();
             
             // Write merged thoughts.json
-            const outputPath = path.join(__dirname, 'thoughts-merged.json');
+            const outputPath = path.join(__dirname, '..', 'src', 'thoughts-merged.json');
             await fs.writeFile(outputPath, JSON.stringify(mergedContent, null, 2), 'utf8');
             
             console.log(`✅ Generated merged content: ${mergedContent.sources.local} local + ${mergedContent.sources.notion} Notion articles`);
