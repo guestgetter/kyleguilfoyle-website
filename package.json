@@ -10,9 +10,9 @@
     "xmlbuilder": "^11.0.1"
   },
   "scripts": {
-    "build": "node build-content.js && node build-static.js",
-    "build-static": "node build-static.js",
-    "sync-notion": "node notion-cms.js",
+    "build": "node scripts/build-content.js && node scripts/build-static.js",
+    "build-static": "node scripts/build-static.js",
+    "sync-notion": "node scripts/notion-cms.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

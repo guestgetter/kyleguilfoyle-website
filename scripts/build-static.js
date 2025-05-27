@@ -58,13 +58,10 @@ async function buildStatic() {
         '404.html',
         'style.css',
         'about.css',
-        'thoughts.js',
-        'mobile-nav.js',
         'thoughts.json',
         'thoughts-merged.json',
         'sitemap.xml',
-        'robots.txt',
-        'restaurant-growth-favicon.svg'
+        'robots.txt'
     ];
     
     // Copy individual files
@@ -81,7 +78,8 @@ async function buildStatic() {
     const directoriesToCopy = [
         'thoughts',
         'favicon',
-        'images'
+        'scripts',
+        'assets'
     ];
     
     for (const dir of directoriesToCopy) {
@@ -104,8 +102,9 @@ async function buildStatic() {
             // Fix relative paths to absolute paths
             content = content.replace(/href="style\.css"/g, 'href="/style.css"');
             content = content.replace(/href="about\.css"/g, 'href="/about.css"');
-            content = content.replace(/src="mobile-nav\.js"/g, 'src="/mobile-nav.js"');
-            content = content.replace(/src="thoughts\.js"/g, 'src="/thoughts.js"');
+            content = content.replace(/src="scripts\/mobile-nav\.js"/g, 'src="/scripts/mobile-nav.js"');
+            content = content.replace(/src="scripts\/thoughts\.js"/g, 'src="/scripts/thoughts.js"');
+            content = content.replace(/src="scripts\/growth-engine\.js"/g, 'src="/scripts/growth-engine.js"');
             
             await fs.writeFile(filePath, content);
             console.log(`✅ Fixed paths in: ${htmlFile}`);
@@ -127,8 +126,8 @@ async function buildStatic() {
                 // Fix relative paths to absolute paths for thought pages
                 content = content.replace(/href="\.\.\/style\.css"/g, 'href="/style.css"');
                 content = content.replace(/href="\.\.\/about\.css"/g, 'href="/about.css"');
-                content = content.replace(/src="\.\.\/mobile-nav\.js"/g, 'src="/mobile-nav.js"');
-                content = content.replace(/src="\.\.\/thoughts\.js"/g, 'src="/thoughts.js"');
+                content = content.replace(/src="\/scripts\/mobile-nav\.js"/g, 'src="/scripts/mobile-nav.js"');
+                content = content.replace(/src="\/scripts\/thoughts\.js"/g, 'src="/scripts/thoughts.js"');
                 
                 // Fix navigation links
                 content = content.replace(/href="\.\.\/index\.html"/g, 'href="/"');

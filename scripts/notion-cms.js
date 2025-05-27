@@ -172,27 +172,93 @@ class NotionCMS {
         }
     }
 
-    // Convert Notion blocks to HTML (basic implementation)
+    // Convert Notion blocks to HTML (improved implementation)
     blocksToHTML(blocks) {
-        return blocks.map(block => {
+        let html = '';
+        let inList = false;
+        let listType = '';
+        
+        for (let i = 0; i < blocks.length; i++) {
+            const block = blocks[i];
+            const nextBlock = blocks[i + 1];
+            
             switch (block.type) {
                 case 'paragraph':
+                    if (inList) {
+                        html += `</${listType}>\n`;
+                        inList = false;
+                    }
                     const text = this.extractPlainText(block.paragraph.rich_text);
-                    return `<p>${text}</p>`;
+                    html += `<p>${text}</p>\n`;
+                    break;
+                    
                 case 'heading_1':
-                    return `<h1>${this.extractPlainText(block.heading_1.rich_text)}</h1>`;
+                    if (inList) {
+                        html += `</${listType}>\n`;
+                        inList = false;
+                    }
+                    html += `<h1>${this.extractPlainText(block.heading_1.rich_text)}</h1>\n`;
+                    break;
+                    
                 case 'heading_2':
-                    return `<h2>${this.extractPlainText(block.heading_2.rich_text)}</h2>`;
+                    if (inList) {
+                        html += `</${listType}>\n`;
+                        inList = false;
+                    }
+                    html += `<h2>${this.extractPlainText(block.heading_2.rich_text)}</h2>\n`;
+                    break;
+                    
                 case 'heading_3':
-                    return `<h3>${this.extractPlainText(block.heading_3.rich_text)}</h3>`;
+                    if (inList) {
+                        html += `</${listType}>\n`;
+                        inList = false;
+                    }
+                    html += `<h3>${this.extractPlainText(block.heading_3.rich_text)}</h3>\n`;
+                    break;
+                    
                 case 'bulleted_list_item':
-                    return `<li>${this.extractPlainText(block.bulleted_list_item.rich_text)}</li>`;
+                    if (!inList || listType !== 'ul') {
+                        if (inList) html += `</${listType}>\n`;
+                        html += '<ul>\n';
+                        inList = true;
+                        listType = 'ul';
+                    }
+                    html += `<li>${this.extractPlainText(block.bulleted_list_item.rich_text)}</li>\n`;
+                    
+                    // Close list if next block is not a list item
+                    if (!nextBlock || (nextBlock.type !== 'bulleted_list_item' && nextBlock.type !== 'numbered_list_item')) {
+                        html += '</ul>\n';
+                        inList = false;
+                    }
+                    break;
+                    
                 case 'numbered_list_item':
-                    return `<li>${this.extractPlainText(block.numbered_list_item.rich_text)}</li>`;
+                    if (!inList || listType !== 'ol') {
+                        if (inList) html += `</${listType}>\n`;
+                        html += '<ol>\n';
+                        inList = true;
+                        listType = 'ol';
+                    }
+                    html += `<li>${this.extractPlainText(block.numbered_list_item.rich_text)}</li>\n`;
+                    
+                    // Close list if next block is not a list item
+                    if (!nextBlock || (nextBlock.type !== 'bulleted_list_item' && nextBlock.type !== 'numbered_list_item')) {
+                        html += '</ol>\n';
+                        inList = false;
+                    }
+                    break;
+                    
                 default:
-                    return '';
+                    break;
             }
-        }).join('\n');
+        }
+        
+        // Close any remaining open list
+        if (inList) {
+            html += `</${listType}>\n`;
+        }
+        
+        return html;
     }
 
     // Generate HTML template for Notion content
@@ -286,7 +352,7 @@ class NotionCMS {
         </div>
     </footer>
 
-    <script src="../mobile-nav.js"></script>
+    <script src="/scripts/mobile-nav.js"></script>
 </body>
 </html>`;
     }
