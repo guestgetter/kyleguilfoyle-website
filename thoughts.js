@@ -21,9 +21,14 @@ const getValidSlug = (post) => {
 // Function to create thought card HTML
 const createThoughtCard = (post) => {
     const slug = getValidSlug(post);
+    const sourceBadge = post.source === 'notion' ? '<span class="source-badge notion">From Notion</span>' : '';
+    
     return `
-        <article class="thought-card">
-            <div class="thought-date">${formatDate(post.date)}</div>
+        <article class="thought-card ${post.source || 'local'}">
+            <div class="thought-date">
+                ${formatDate(post.date)}
+                ${sourceBadge}
+            </div>
             <h3 class="thought-title">${post.title}</h3>
             <div class="thought-excerpt">${post.excerpt}</div>
             <a href="thoughts/${slug}.html" class="thought-link">Read More →</a>
@@ -37,11 +42,27 @@ async function loadThoughts() {
         // Determine if we're on the archive page
         const isArchivePage = window.location.pathname.includes('thoughts.html');
         
-        const response = await fetch('thoughts.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        // Try to load merged content first, fallback to original thoughts.json
+        let response;
+        let data;
+        
+        try {
+            response = await fetch('thoughts-merged.json');
+            if (response.ok) {
+                data = await response.json();
+                console.log('✅ Loaded merged content (local + Notion)');
+            } else {
+                throw new Error('Merged content not available');
+            }
+        } catch (error) {
+            console.log('📝 Falling back to local content only');
+            response = await fetch('thoughts.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            data = await response.json();
         }
-        const data = await response.json();
+        
         let posts = Array.isArray(data) ? data : (data.thoughts || []); // Handle both array and object formats
         
         // Filter out posts without titles
