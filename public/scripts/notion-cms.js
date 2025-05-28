@@ -300,6 +300,51 @@ class NotionCMS {
                     }
                     break;
                     
+                case 'callout':
+                    if (inList) {
+                        html += `</${listType}>\n`;
+                        inList = false;
+                    }
+                    
+                    // Get callout content and icon
+                    const calloutText = this.extractPlainText(block.callout.rich_text);
+                    const calloutIcon = block.callout.icon;
+                    
+                    // Determine callout type based on icon or content
+                    let calloutType = 'info'; // default
+                    let iconDisplay = '💡'; // default icon
+                    
+                    if (calloutIcon) {
+                        if (calloutIcon.type === 'emoji') {
+                            iconDisplay = calloutIcon.emoji;
+                            // Map common emojis to callout types for styling
+                            const iconMap = {
+                                '💡': 'info',
+                                '⚠️': 'warning', 
+                                '❗': 'warning',
+                                '⛔': 'danger',
+                                '❌': 'danger',
+                                '✅': 'success',
+                                '✔️': 'success',
+                                '📝': 'note',
+                                '📋': 'note',
+                                '🔥': 'tip',
+                                '💰': 'money',
+                                '📈': 'growth',
+                                '🎯': 'goal'
+                            };
+                            calloutType = iconMap[calloutIcon.emoji] || 'info';
+                        } else if (calloutIcon.type === 'external') {
+                            iconDisplay = `<img src="${calloutIcon.external.url}" alt="icon" class="callout-icon-img">`;
+                        }
+                    }
+                    
+                    html += `<div class="notion-callout callout-${calloutType}">\n`;
+                    html += `  <div class="callout-icon">${iconDisplay}</div>\n`;
+                    html += `  <div class="callout-content">${calloutText}</div>\n`;
+                    html += `</div>\n`;
+                    break;
+                    
                 default:
                     // Handle unknown block types gracefully
                     console.log(`Unhandled block type: ${block.type}`);
