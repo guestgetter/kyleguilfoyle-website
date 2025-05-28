@@ -2118,3 +2118,52 @@ body.no-scroll {
         font-size: 0.9rem;
     }
 }
+
+/* Notion Quotes */
+.notion-quote {
+    margin: 1.5rem 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--dark-green);
+    background: linear-gradient(135deg, rgba(26, 71, 42, 0.05), rgba(26, 71, 42, 0.02));
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    position: relative;
+}
+
+.notion-quote::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--dark-green);
+    opacity: 0.3;
+    position: absolute;
+    top: -0.5rem;
+    left: 1rem;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+}
+
+.notion-quote p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text);
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .notion-quote {
+        padding: 1rem 1.25rem;
+        margin: 1.25rem 0;
+    }
+    
+    .notion-quote::before {
+        font-size: 2.5rem;
+        top: -0.25rem;
+        left: 0.75rem;
+    }
+    
+    .notion-quote p {
+        font-size: 1rem;
+    }
+}

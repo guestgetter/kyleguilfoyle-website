@@ -345,6 +345,18 @@ class NotionCMS {
                     html += `</div>\n`;
                     break;
                     
+                case 'quote':
+                    if (inList) {
+                        html += `</${listType}>\n`;
+                        inList = false;
+                    }
+                    
+                    const quoteText = this.extractPlainText(block.quote.rich_text);
+                    html += `<blockquote class="notion-quote">\n`;
+                    html += `  <p>${quoteText}</p>\n`;
+                    html += `</blockquote>\n`;
+                    break;
+                    
                 default:
                     // Handle unknown block types gracefully
                     console.log(`Unhandled block type: ${block.type}`);
