@@ -6,6 +6,10 @@ const fs = require('fs');
 console.log('🔄 Starting sync and deploy process...');
 
 try {
+  // Get current branch
+  const currentBranch = execSync('git branch --show-current', { encoding: 'utf8' }).trim();
+  console.log(`📍 Current branch: ${currentBranch}`);
+
   // Check if we have uncommitted changes
   try {
     execSync('git diff --exit-code', { stdio: 'pipe' });
@@ -39,12 +43,31 @@ try {
   console.log('💾 Committing changes...');
   execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });
 
-  // Push to trigger deployment
-  console.log('🚀 Pushing to GitHub...');
-  execSync('git push origin main', { stdio: 'inherit' });
+  // Push to current branch
+  console.log(`🚀 Pushing to ${currentBranch}...`);
+  try {
+    execSync(`git push origin ${currentBranch}`, { stdio: 'inherit' });
+  } catch (error) {
+    console.log('⚠️  Push failed. Trying to pull and merge first...');
+    try {
+      execSync(`git pull origin ${currentBranch} --rebase`, { stdio: 'inherit' });
+      execSync(`git push origin ${currentBranch}`, { stdio: 'inherit' });
+    } catch (pullError) {
+      console.error('❌ Failed to push even after pulling. You may need to resolve conflicts manually.');
+      console.log('💡 Try running: git pull origin ' + currentBranch + ' --rebase');
+      process.exit(1);
+    }
+  }
 
-  console.log('✅ Sync and deploy complete! Your changes will be live shortly.');
-  console.log('🌐 Check your Digital Ocean deployment logs for progress.');
+  if (currentBranch !== 'main') {
+    console.log('⚠️  Note: You\'re on branch "' + currentBranch + '". Digital Ocean deploys from "main".');
+    console.log('💡 To deploy to production, merge this branch to main or switch deployment branch in Digital Ocean.');
+  }
+
+  console.log('✅ Sync and deploy complete! Your changes are pushed to ' + currentBranch + '.');
+  if (currentBranch === 'main') {
+    console.log('🌐 Check your Digital Ocean deployment logs for progress.');
+  }
 
 } catch (error) {
   console.error('❌ Error during sync and deploy:', error.message);
