@@ -379,7 +379,6 @@ class NotionCMS {
         <header class="thought-header">
             <div class="thought-meta">
                 <time datetime="${post.date}">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-                <span class="source-badge">From Notion</span>
             </div>
             <h1>${post.title}</h1>
         </header>

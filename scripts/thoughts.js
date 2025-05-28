@@ -21,7 +21,6 @@ const getValidSlug = (post) => {
 // Function to create thought card HTML
 const createThoughtCard = (post) => {
     const slug = getValidSlug(post);
-    const sourceBadge = post.source === 'notion' ? '<span class="source-badge notion">From Notion</span>' : '';
     const contentType = post.contentType || 'thought';
     const contentTypeBadge = contentType === 'guide' ? '<span class="content-type-badge guide">Guide</span>' : '';
     
@@ -29,7 +28,6 @@ const createThoughtCard = (post) => {
         <article class="thought-card ${post.source || 'local'} ${contentType}">
             <div class="thought-date">
                 ${formatDate(post.date)}
-                ${sourceBadge}
                 ${contentTypeBadge}
             </div>
             <h3 class="thought-title">${post.title}</h3>
