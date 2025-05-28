@@ -1,6 +1,8 @@
 const { Client } = require('@notionhq/client');
 const fs = require('fs').promises;
 const path = require('path');
+const https = require('https');
+const http = require('http');
 require('dotenv').config();
 
 class NotionCMS {
@@ -155,8 +157,8 @@ class NotionCMS {
                     block_id: post.notionId
                 });
 
-                // Convert blocks to HTML (simplified version)
-                const htmlContent = this.blocksToHTML(pageContent.results);
+                // Convert blocks to HTML (improved implementation)
+                const htmlContent = await this.blocksToHTML(pageContent.results, post.slug);
                 
                 // Generate the full HTML file
                 const fullHTML = this.generateHTMLTemplate(post, htmlContent);
@@ -173,10 +175,13 @@ class NotionCMS {
     }
 
     // Convert Notion blocks to HTML (improved implementation)
-    blocksToHTML(blocks) {
+    async blocksToHTML(blocks, postSlug) {
         let html = '';
         let inList = false;
         let listType = '';
+        
+        // Ensure images directory exists
+        const imagesDir = await this.ensureImagesDir();
         
         for (let i = 0; i < blocks.length; i++) {
             const block = blocks[i];
@@ -189,7 +194,9 @@ class NotionCMS {
                         inList = false;
                     }
                     const text = this.extractPlainText(block.paragraph.rich_text);
-                    html += `<p>${text}</p>\n`;
+                    if (text.trim()) {
+                        html += `<p>${text}</p>\n`;
+                    }
                     break;
                     
                 case 'heading_1':
@@ -248,7 +255,54 @@ class NotionCMS {
                     }
                     break;
                     
+                case 'image':
+                    if (inList) {
+                        html += `</${listType}>\n`;
+                        inList = false;
+                    }
+                    
+                    try {
+                        // Get image URL from Notion
+                        let imageUrl = '';
+                        if (block.image.type === 'external') {
+                            imageUrl = block.image.external.url;
+                        } else if (block.image.type === 'file') {
+                            imageUrl = block.image.file.url;
+                        }
+                        
+                        if (imageUrl) {
+                            // Create filename
+                            const imageExtension = imageUrl.split('.').pop().split('?')[0] || 'jpg';
+                            const imageName = `${postSlug}-${block.id}.${imageExtension}`;
+                            const localImagePath = path.join(imagesDir, imageName);
+                            
+                            // Download image
+                            await this.downloadImage(imageUrl, localImagePath);
+                            
+                            // Get caption if available
+                            const caption = this.extractPlainText(block.image.caption);
+                            
+                            // Generate HTML
+                            const relativeImagePath = `/assets/images/notion/${imageName}`;
+                            html += `<figure class="notion-image">\n`;
+                            html += `  <img src="${relativeImagePath}" alt="${caption || 'Image'}" loading="lazy">\n`;
+                            if (caption) {
+                                html += `  <figcaption>${caption}</figcaption>\n`;
+                            }
+                            html += `</figure>\n`;
+                            
+                            console.log(`Downloaded image: ${imageName}`);
+                        }
+                    } catch (error) {
+                        console.error(`Error processing image in block ${block.id}:`, error.message);
+                        // Add placeholder if image fails
+                        html += `<p><em>[Image could not be loaded]</em></p>\n`;
+                    }
+                    break;
+                    
                 default:
+                    // Handle unknown block types gracefully
+                    console.log(`Unhandled block type: ${block.type}`);
                     break;
             }
         }
@@ -355,6 +409,37 @@ class NotionCMS {
     <script src="/scripts/mobile-nav.js"></script>
 </body>
 </html>`;
+    }
+
+    // Download image from URL
+    async downloadImage(url, filename) {
+        const fs = require('fs'); // Use regular fs for createWriteStream
+        return new Promise((resolve, reject) => {
+            const protocol = url.startsWith('https:') ? https : http;
+            const file = fs.createWriteStream(filename);
+            
+            protocol.get(url, (response) => {
+                response.pipe(file);
+                file.on('finish', () => {
+                    file.close();
+                    resolve(filename);
+                });
+            }).on('error', (err) => {
+                fs.unlink(filename, () => {}); // Ignore unlink errors
+                reject(err);
+            });
+        });
+    }
+
+    // Ensure images directory exists
+    async ensureImagesDir() {
+        const imagesDir = path.join(__dirname, '..', 'assets', 'images', 'notion');
+        try {
+            await fs.mkdir(imagesDir, { recursive: true });
+        } catch (error) {
+            // Directory already exists
+        }
+        return imagesDir;
     }
 
     // Main execution function
