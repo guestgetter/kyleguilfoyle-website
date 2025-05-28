@@ -61,7 +61,16 @@ async function buildStatic() {
         'src/thoughts.json',
         'src/thoughts-merged.json',
         'sitemap.xml',
-        'robots.txt'
+        'robots.txt',
+        // Guide icon images
+        '80-20-restaurant-growth-os.png',
+        'defining-your-true-regular-math.png',
+        'the-restaurant-alchemist-manifesto.png',
+        'what-is-restaurant-growth-engineering.png',
+        'restaurant-alchemist.svg',
+        'restaurant-growth-favicon.svg',
+        'e-commerce-illustration.svg',
+        'kyle-top.png'
     ];
     
     // Copy individual files
@@ -79,6 +88,7 @@ async function buildStatic() {
     const directoriesToCopy = [
         'src/thoughts',
         'src/guides',
+        'images',
         'favicon',
         'scripts',
         'assets'
