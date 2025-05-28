@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "🔍 Running pre-commit validation..."
+
+# Run the build process
+npm run build
+
+# If build fails, prevent commit
+if [ $? -ne 0 ]; then
+    echo "❌ Build failed! Fix issues before committing."
+    exit 1
+fi
+
+echo "✅ Pre-commit validation passed!"
+exit 0 

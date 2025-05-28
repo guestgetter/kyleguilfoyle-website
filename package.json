@@ -13,6 +13,7 @@
     "build": "node scripts/build-content.js && node scripts/build-static.js",
     "build-static": "node scripts/build-static.js",
     "sync-notion": "node scripts/notion-cms.js",
+    "validate": "node scripts/validate-paths.js",
     "deploy": "node scripts/sync-and-deploy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

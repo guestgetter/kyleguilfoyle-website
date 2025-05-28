@@ -71,7 +71,8 @@ async function buildStatic() {
         'restaurant-alchemist.svg',
         'restaurant-growth-favicon.svg',
         'e-commerce-illustration.svg',
-        'kyle-top.png'
+        'kyle-top.png',
+        'kyle-guilfoyle-headshot.jpg'
     ];
     
     // Copy individual files
@@ -119,6 +120,11 @@ async function buildStatic() {
             content = content.replace(/src="scripts\/mobile-nav\.js"/g, 'src="/scripts/mobile-nav.js"');
             content = content.replace(/src="scripts\/thoughts\.js"/g, 'src="/scripts/thoughts.js"');
             content = content.replace(/src="scripts\/growth-engine\.js"/g, 'src="/scripts/growth-engine.js"');
+            
+            // Fix JavaScript files that don't have scripts/ prefix
+            content = content.replace(/src="analytics\.js"/g, 'src="/scripts/analytics.js"');
+            content = content.replace(/src="forms\.js"/g, 'src="/scripts/forms.js"');
+            content = content.replace(/src="mobile-nav\.js"/g, 'src="/scripts/mobile-nav.js"');
             
             await fs.writeFile(filePath, content);
             console.log(`✅ Fixed paths in: ${htmlFile}`);
@@ -196,6 +202,20 @@ async function buildStatic() {
     
     console.log('\n🎉 Static site build complete!');
     console.log('📁 All files copied to public/ directory');
+    
+    // Validate all paths and assets
+    console.log('\n🔍 Running path validation...');
+    const PathValidator = require('./validate-paths.js');
+    const validator = new PathValidator();
+    const isValid = await validator.validatePaths();
+    
+    if (!isValid) {
+        console.log('\n❌ Build completed but validation failed!');
+        console.log('💡 Fix the above issues to prevent broken links and missing assets.');
+        process.exit(1);
+    }
+    
+    console.log('\n✅ Build and validation complete! Site is ready for deployment.');
 }
 
 buildStatic().catch(console.error); 
