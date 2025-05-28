@@ -58,6 +58,7 @@ async function buildStatic() {
         'src/404.html',
         'src/style.css',
         'src/about.css',
+        'src/guide.css',
         'src/thoughts.json',
         'src/thoughts-merged.json',
         'sitemap.xml',
@@ -172,6 +173,7 @@ async function buildStatic() {
                 // Fix relative paths to absolute paths for guide pages
                 content = content.replace(/href="\.\.\/style\.css"/g, 'href="/style.css"');
                 content = content.replace(/href="\.\.\/about\.css"/g, 'href="/about.css"');
+                content = content.replace(/href="\.\.\/guide\.css"/g, 'href="/guide.css"');
                 content = content.replace(/src="\/scripts\/mobile-nav\.js"/g, 'src="/scripts/mobile-nav.js"');
                 content = content.replace(/src="\/scripts\/thoughts\.js"/g, 'src="/scripts/thoughts.js"');
                 
