@@ -78,6 +78,7 @@ async function buildStatic() {
     // Copy directories
     const directoriesToCopy = [
         'src/thoughts',
+        'src/guides',
         'favicon',
         'scripts',
         'assets'
@@ -146,6 +147,39 @@ async function buildStatic() {
         }
     } catch (error) {
         console.log(`⚠️  Could not fix thought file paths:`, error.message);
+    }
+
+    // Fix paths in guide HTML files
+    try {
+        const guidesDir = path.join(publicDir, 'guides');
+        const guideFiles = await fs.readdir(guidesDir);
+        
+        for (const file of guideFiles) {
+            if (file.endsWith('.html')) {
+                const filePath = path.join(guidesDir, file);
+                let content = await fs.readFile(filePath, 'utf8');
+                
+                // Fix relative paths to absolute paths for guide pages
+                content = content.replace(/href="\.\.\/style\.css"/g, 'href="/style.css"');
+                content = content.replace(/href="\.\.\/about\.css"/g, 'href="/about.css"');
+                content = content.replace(/src="\/scripts\/mobile-nav\.js"/g, 'src="/scripts/mobile-nav.js"');
+                content = content.replace(/src="\/scripts\/thoughts\.js"/g, 'src="/scripts/thoughts.js"');
+                
+                // Fix navigation links
+                content = content.replace(/href="\.\.\/index\.html"/g, 'href="/"');
+                content = content.replace(/href="\.\.\/about\.html"/g, 'href="/about.html"');
+                content = content.replace(/href="\.\.\/contact\.html"/g, 'href="/contact.html"');
+                content = content.replace(/href="\.\.\/thoughts\.html"/g, 'href="/thoughts.html"');
+                
+                // Fix favicon paths
+                content = content.replace(/href="\/favicon\//g, 'href="/favicon/');
+                
+                await fs.writeFile(filePath, content);
+                console.log(`✅ Fixed paths in: guides/${file}`);
+            }
+        }
+    } catch (error) {
+        console.log(`⚠️  Could not fix guide file paths:`, error.message);
     }
     
     console.log('\n🎉 Static site build complete!');
