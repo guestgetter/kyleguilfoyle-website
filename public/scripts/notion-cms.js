@@ -523,7 +523,7 @@ class NotionCMS {
             }
             
             // Update homepage with Notion guides
-            await this.updateHomepageGuides(mergedContent.thoughts);
+            // await this.updateHomepageGuides(mergedContent.thoughts);
             
             console.log('🎉 Notion CMS sync complete!');
             
