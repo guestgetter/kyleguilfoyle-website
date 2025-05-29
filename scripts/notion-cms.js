@@ -641,7 +641,11 @@ class NotionCMS {
 
     // Helper function to remove notion guides from entire homepage
     removeNotionGuidesFromHomepage(homepage) {
-        return homepage.replace(/\s*<a href="thoughts\/[^"]*\.html" class="topic-card">[\s\S]*?<div class="content-badge guide-badge">Guide<\/div>\s*<\/a>/g, '');
+        // More robust regex that handles the actual structure with empty lines
+        // This matches from the start of a topic-card that links to thoughts/ through the closing </a> tag
+        // including any whitespace and empty lines
+        const notionGuideRegex = /\s*<a\s+href="thoughts\/[^"]*\.html"\s+class="topic-card">\s*[\s\S]*?<div\s+class="content-badge\s+guide-badge">Guide<\/div>\s*<\/a>/g;
+        return homepage.replace(notionGuideRegex, '');
     }
 }
 
