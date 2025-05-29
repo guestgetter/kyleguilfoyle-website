@@ -2164,6 +2164,34 @@ body.no-scroll {
     }
     
     .notion-quote p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
+}
+
+/* Guide Badges for Notion Content */
+.content-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.guide-badge {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+}
+
+.topic-card {
+    position: relative;
+}
+
+.topic-card:hover .content-badge {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(245, 158, 11, 0.4);
 }

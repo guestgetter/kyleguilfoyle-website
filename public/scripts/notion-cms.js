@@ -519,11 +519,80 @@ class NotionCMS {
                 console.log(`✅ Generated ${notionContent.length} HTML files from Notion`);
             }
             
+            // Update homepage with Notion guides
+            await this.updateHomepageGuides(mergedContent.thoughts);
+            
             console.log('🎉 Notion CMS sync complete!');
             
         } catch (error) {
             console.error('❌ Error during sync:', error.message);
             process.exit(1);
+        }
+    }
+
+    // Update homepage Featured Guides section with Notion guides
+    async updateHomepageGuides(allContent) {
+        try {
+            const homepagePath = path.join(__dirname, '..', 'src', 'index.html');
+            let homepage = await fs.readFile(homepagePath, 'utf8');
+            
+            // Find guides from Notion (content type = 'guide')
+            const notionGuides = allContent.filter(item => 
+                item.source === 'notion' && 
+                item.contentType === 'guide'
+            );
+            
+            if (notionGuides.length === 0) {
+                console.log('ℹ️  No Notion guides found to add to homepage');
+                return;
+            }
+            
+            // Find the Featured Guides section
+            const guidesStartMarker = '<div class="topics-grid">';
+            const guidesEndMarker = '</div>\n    </section>';
+            
+            const startIndex = homepage.indexOf(guidesStartMarker);
+            const endIndex = homepage.indexOf(guidesEndMarker, startIndex);
+            
+            if (startIndex === -1 || endIndex === -1) {
+                console.log('⚠️  Could not find Featured Guides section in homepage');
+                return;
+            }
+            
+            // Extract existing static guides (before the closing div)
+            const beforeGuides = homepage.substring(0, startIndex + guidesStartMarker.length);
+            const afterGuides = homepage.substring(endIndex);
+            
+            // Get existing static guide cards (everything between the markers)
+            const existingGuidesSection = homepage.substring(startIndex + guidesStartMarker.length, endIndex);
+            
+            // Generate HTML for Notion guides
+            let notionGuidesHTML = '';
+            for (const guide of notionGuides) {
+                // For now, use a default icon - you can enhance this later
+                const iconSrc = guide.icon || 'restaurant-growth-favicon.svg';
+                
+                notionGuidesHTML += `
+            <a href="thoughts/${guide.slug}.html" class="topic-card">
+                <div class="topic-icon">
+                    <img src="${iconSrc}" alt="${guide.title} Icon" width="120" height="120">
+                </div>
+                <h3>${guide.title}</h3>
+                <p>${guide.excerpt}</p>
+                <div class="content-badge guide-badge">Guide</div>
+            </a>`;
+            }
+            
+            // Combine existing static guides with Notion guides
+            const updatedHomepage = beforeGuides + existingGuidesSection + notionGuidesHTML + '\n        ' + afterGuides;
+            
+            // Write updated homepage
+            await fs.writeFile(homepagePath, updatedHomepage, 'utf8');
+            
+            console.log(`✅ Added ${notionGuides.length} Notion guides to homepage`);
+            
+        } catch (error) {
+            console.error('❌ Error updating homepage guides:', error.message);
         }
     }
 }
