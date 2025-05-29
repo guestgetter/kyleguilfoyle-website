@@ -547,6 +547,9 @@ class NotionCMS {
             
             if (notionGuides.length === 0) {
                 console.log('ℹ️  No Notion guides found to add to homepage');
+                // Remove any existing Notion guides from homepage
+                homepage = this.removeNotionGuidesFromHomepage(homepage);
+                await fs.writeFile(homepagePath, homepage, 'utf8');
                 return;
             }
             
@@ -562,14 +565,15 @@ class NotionCMS {
                 return;
             }
             
-            // Extract existing static guides (before the closing div)
+            // Extract the guides section content
             const beforeGuides = homepage.substring(0, startIndex + guidesStartMarker.length);
             const afterGuides = homepage.substring(endIndex);
+            const currentGuidesSection = homepage.substring(startIndex + guidesStartMarker.length, endIndex);
             
-            // Get existing static guide cards (everything between the markers)
-            const existingGuidesSection = homepage.substring(startIndex + guidesStartMarker.length, endIndex);
+            // Remove any existing Notion guides (those with guide-badge class)
+            const cleanedGuidesSection = this.removeNotionGuidesFromSection(currentGuidesSection);
             
-            // Generate HTML for Notion guides
+            // Generate HTML for new Notion guides
             let notionGuidesHTML = '';
             for (const guide of notionGuides) {
                 // For now, use a default icon - you can enhance this later
@@ -586,8 +590,8 @@ class NotionCMS {
             </a>`;
             }
             
-            // Combine existing static guides with Notion guides
-            const updatedHomepage = beforeGuides + existingGuidesSection + notionGuidesHTML + '\n        ' + afterGuides;
+            // Combine cleaned static guides with new Notion guides
+            const updatedHomepage = beforeGuides + cleanedGuidesSection + notionGuidesHTML + '\n        ' + afterGuides;
             
             // Write updated homepage
             await fs.writeFile(homepagePath, updatedHomepage, 'utf8');
@@ -597,6 +601,47 @@ class NotionCMS {
         } catch (error) {
             console.error('❌ Error updating homepage guides:', error.message);
         }
+    }
+
+    // Helper function to remove Notion guides from a section of HTML
+    removeNotionGuidesFromSection(htmlSection) {
+        // Remove any topic-card that contains a guide-badge
+        const lines = htmlSection.split('\n');
+        const cleanedLines = [];
+        let insideNotionGuide = false;
+        let braceCount = 0;
+        
+        for (const line of lines) {
+            if (line.includes('guide-badge')) {
+                // Find the start of this topic-card
+                let cardStartIndex = cleanedLines.length - 1;
+                while (cardStartIndex >= 0 && !cleanedLines[cardStartIndex].includes('<a href="thoughts/')) {
+                    cardStartIndex--;
+                }
+                // Remove all lines from the card start to current
+                if (cardStartIndex >= 0) {
+                    cleanedLines.splice(cardStartIndex);
+                }
+                insideNotionGuide = true;
+                continue;
+            }
+            
+            if (insideNotionGuide) {
+                if (line.includes('</a>')) {
+                    insideNotionGuide = false;
+                }
+                continue; // Skip lines inside notion guide
+            }
+            
+            cleanedLines.push(line);
+        }
+        
+        return cleanedLines.join('\n');
+    }
+
+    // Helper function to remove notion guides from entire homepage
+    removeNotionGuidesFromHomepage(homepage) {
+        return homepage.replace(/\s*<a href="thoughts\/[^"]*\.html" class="topic-card">[\s\S]*?<div class="content-badge guide-badge">Guide<\/div>\s*<\/a>/g, '');
     }
 }
 
