@@ -381,6 +381,9 @@ class NotionCMS {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${post.title} | Kyle Guilfoyle</title>
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kyleguilfoyle.com/thoughts/${post.slug}.html">
+    
     <!-- SEO Meta Tags -->
     <meta name="description" content="${post.excerpt}">
     <meta name="keywords" content="restaurant growth, restaurant marketing, business insights">
