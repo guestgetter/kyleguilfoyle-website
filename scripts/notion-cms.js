@@ -357,8 +357,68 @@ class NotionCMS {
                     html += `</blockquote>\n`;
                     break;
                     
+                case 'table':
+                    if (inList) {
+                        html += `</${listType}>\n`;
+                        inList = false;
+                    }
+                    
+                    try {
+                        // Get table children (rows)
+                        const tableResponse = await this.notion.blocks.children.list({
+                            block_id: block.id
+                        });
+                        
+                        const rows = tableResponse.results;
+                        const hasHeader = block.table.has_column_header;
+                        const hasRowHeader = block.table.has_row_header;
+                        
+                        if (rows.length > 0) {
+                            html += `<div class="notion-table-wrapper">\n`;
+                            html += `<table class="notion-table">\n`;
+                            
+                            rows.forEach((row, rowIndex) => {
+                                if (row.type === 'table_row' && row.table_row.cells) {
+                                    const isHeaderRow = hasHeader && rowIndex === 0;
+                                    const tagName = isHeaderRow ? 'th' : 'td';
+                                    const sectionTag = isHeaderRow ? 'thead' : 'tbody';
+                                    
+                                    // Open section tag if needed
+                                    if (isHeaderRow) {
+                                        html += `<${sectionTag}>\n`;
+                                    } else if (rowIndex === 1 && hasHeader) {
+                                        html += `<${sectionTag}>\n`;
+                                    }
+                                    
+                                    html += `<tr>\n`;
+                                    row.table_row.cells.forEach((cell, cellIndex) => {
+                                        const isRowHeaderCell = hasRowHeader && cellIndex === 0 && !isHeaderRow;
+                                        const actualTagName = isRowHeaderCell ? 'th' : tagName;
+                                        const cellText = this.extractPlainText(cell);
+                                        html += `  <${actualTagName}>${cellText}</${actualTagName}>\n`;
+                                    });
+                                    html += `</tr>\n`;
+                                    
+                                    // Close section tag if this is the last row
+                                    if ((isHeaderRow && rows.length === 1) || 
+                                        (isHeaderRow && rowIndex === 0 && rows.length > 1)) {
+                                        html += `</${sectionTag}>\n`;
+                                    } else if (rowIndex === rows.length - 1 && (!hasHeader || rowIndex > 0)) {
+                                        html += `</tbody>\n`;
+                                    }
+                                }
+                            });
+                            
+                            html += `</table>\n`;
+                            html += `</div>\n`;
+                        }
+                    } catch (error) {
+                        console.error(`Error processing table in block ${block.id}:`, error.message);
+                        html += `<p><em>[Table could not be loaded]</em></p>\n`;
+                    }
+                    break;
+                    
                 default:
-                    // Handle unknown block types gracefully
                     console.log(`Unhandled block type: ${block.type}`);
                     break;
             }
