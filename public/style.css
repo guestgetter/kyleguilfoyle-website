@@ -1181,29 +1181,31 @@ body {
     
     /* Enhanced my-story section */
     .my-story {
-        padding: 3rem 1.5rem;
+        padding: 2rem 1.5rem 1.5rem;
+        margin: 1.5rem auto;
     }
     
     .my-story h2 {
         font-size: 1.8rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         text-align: center;
     }
     
     .my-story-content {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
         text-align: center;
     }
     
     .my-story-text {
         max-width: 100%;
         text-align: center;
+        padding-bottom: 0;
     }
     
     .my-story-text p {
         font-size: 1rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         text-align: center;
     }
     
@@ -1221,6 +1223,7 @@ body {
     .caption {
         font-size: 0.9rem;
         margin-top: 0.5rem;
+        margin-bottom: 0;
         text-align: center;
     }
     
@@ -2243,18 +2246,34 @@ body.no-scroll {
 }
 @media (max-width: 600px) {
     .my-story {
-        padding: 2.2rem 0.5rem 2rem;
+        padding: 2rem 1.5rem 1.5rem;
         border-radius: 12px;
+        margin: 1.5rem auto 1.5rem auto;
     }
     .my-story h2 {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
     }
     .my-story-photo img {
         width: 100%;
         max-width: 100%;
     }
     .my-story-text {
-        font-size: 1.05rem;
+        font-size: 1rem;
+        padding-bottom: 0;
+    }
+    .my-story-text p {
+        margin-bottom: 1rem;
+    }
+    .my-story-content {
+        gap: 1.5rem;
+    }
+    .my-story-photo {
+        margin-top: 0;
+    }
+    .caption {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
     }
 }
 
