@@ -418,6 +418,14 @@ class NotionCMS {
                     }
                     break;
                     
+                case 'divider':
+                    if (inList) {
+                        html += `</${listType}>\n`;
+                        inList = false;
+                    }
+                    html += `<hr class="notion-divider">\n`;
+                    break;
+                    
                 default:
                     console.log(`Unhandled block type: ${block.type}`);
                     break;

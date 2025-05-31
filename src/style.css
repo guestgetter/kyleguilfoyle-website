@@ -2740,3 +2740,25 @@ body.no-scroll {
     background: linear-gradient(135deg, #FF6B6B, #FF8E53);
     color: white;
 }
+
+/* Notion Dividers */
+.notion-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%);
+    margin: 3rem 0;
+    position: relative;
+}
+
+.notion-divider::before {
+    content: '⋯';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: rgba(0, 0, 0, 0.3);
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    line-height: 1;
+}
