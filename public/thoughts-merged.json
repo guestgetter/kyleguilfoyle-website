@@ -4,7 +4,7 @@
       "id": "notion-20460fed-82e0-8037-b140-ebc169c28a6c",
       "title": "I Created A Writing “Ignition” || May 31st, 2025 || London, Ontario",
       "date": "2025-05-31",
-      "slug": "/thoughts/writing-ignition",
+      "slug": "writing-ignition",
       "excerpt": "I made a custom GPT to help me get into flow and creativity through writing",
       "source": "notion",
       "contentType": "thought",
@@ -277,7 +277,7 @@
       "source": "local"
     }
   ],
-  "lastUpdated": "2025-05-31T15:44:44.737Z",
+  "lastUpdated": "2025-05-31T16:06:36.631Z",
   "sources": {
     "local": 32,
     "notion": 2
