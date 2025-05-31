@@ -1,0 +1,166 @@
+{
+  "src/index.html": {
+    "hash": "MTU1OTM8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50aHR0cHM6Ly9hcGkuaGlnaGxldmVsLmNvbS9hbmFseXRpY3MvdjEvWU9VUl9MT0NBVElPTl9JRC5qcycpOwogICAgPC9zY3JpcHQ+CiAgICAtLT4KPC9ib2R5Pgo8L2h0bWw+Cg==",
+    "lastMod": "2025-05-31"
+  },
+  "src/about.html": {
+    "hash": "MTkxNjk8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50aXB0cy9lbWFpbC1ub3RpZmljYXRpb25zLmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJzY3JpcHRzL2Zvcm1zLmpzIj48L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+IA==",
+    "lastMod": "2025-05-31"
+  },
+  "src/contact.html": {
+    "hash": "MjMzNjA8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50c3RGcmFtZSkgYWRqdXN0SWZyYW1lKGxhdGVzdEZyYW1lKTsKICAgICAgICAgICAgfSwgMjAwMCk7CiAgICAgICAgfSk7CiAgICA8L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+IA==",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts.html": {
+    "hash": "NDMxODwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJzY3JpcHRzL21vYmlsZS1uYXYuanMiPjwvc2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4g",
+    "lastMod": "2025-05-31"
+  },
+  "src/guides/80-20-restaurant-growth-os.html": {
+    "hash": "NjI3OTwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnRzL2VtYWlsLW5vdGlmaWNhdGlvbnMuanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9Ii4uL3NjcmlwdHMvZm9ybXMuanMiPjwvc2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4g",
+    "lastMod": "2025-05-31"
+  },
+  "src/guides/restaurant-alchemist.html": {
+    "hash": "MTkwMjc8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50cy9lbWFpbC1ub3RpZmljYXRpb25zLmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSIuLi9zY3JpcHRzL2Zvcm1zLmpzIj48L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+IA==",
+    "lastMod": "2025-05-31"
+  },
+  "src/guides/true-regular-math.html": {
+    "hash": "NTk3NTwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnRzL2VtYWlsLW5vdGlmaWNhdGlvbnMuanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9Ii4uL3NjcmlwdHMvZm9ybXMuanMiPjwvc2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4g",
+    "lastMod": "2025-05-31"
+  },
+  "src/guides/what-is-restaurant-growth-engineering.html": {
+    "hash": "NjExNjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnRzL2VtYWlsLW5vdGlmaWNhdGlvbnMuanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9Ii4uL3NjcmlwdHMvZm9ybXMuanMiPjwvc2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4g",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/100-alchemy.html": {
+    "hash": "ODk4MTwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/1m-revenue-growth-operating-systems.html": {
+    "hash": "MTM1NDM8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50aXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KCiAgICA8c2NyaXB0IHNyYz0iL3NjcmlwdHMvbW9iaWxlLW5hdi5qcyI+PC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPg==",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/2-tools-to-make-social-media-fun.html": {
+    "hash": "NTcwNjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/2021-themes.html": {
+    "hash": "MzU1NDwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/2022-habits-themes-and-goals.html": {
+    "hash": "NTg2NzwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/3-discoveries-and-a-quote.html": {
+    "hash": "NTcyNTwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/3x3x3-method.html": {
+    "hash": "NDgwOTk8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50ICAgICAgICAgICAgIDxhIGhyZWY9IiMiPlR3aXR0ZXI8L2E+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgPC9mb290ZXI+CjwvYm9keT4KPC9odG1sPg==",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/4-workshops-on-local-offense.html": {
+    "hash": "NTQzMDwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/51-2-0-8.html": {
+    "hash": "NDU5NjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/6-thinking-hats-how-to-think-in-the-same-direction.html": {
+    "hash": "OTM2MzwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/a-breakthrough-model.html": {
+    "hash": "MTI3MjE8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50ICAgICAgICAgICAgIDxhIGhyZWY9IiMiPlR3aXR0ZXI8L2E+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgPC9mb290ZXI+CjwvYm9keT4KPC9odG1sPg==",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/advertising-mindset-shifts-ive-had-to-make.html": {
+    "hash": "NDQ3MDwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/brainstorming-vs-listening.html": {
+    "hash": "NjIyNjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/brick-by-written-brick.html": {
+    "hash": "Njc0MDwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/cold-calling.html": {
+    "hash": "ODA4MjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/curtis-duggan-small-starts.html": {
+    "hash": "NDgxODwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/eat-your-customers-complexity.html": {
+    "hash": "Mzk3ODwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/enthusiastic-amateur.html": {
+    "hash": "NjAzODwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/fish-at-your-feet.html": {
+    "hash": "NDM0NzwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/good-model-bad-model.html": {
+    "hash": "NDk0MjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/how-to-be-everywhere-at-the-right-time.html": {
+    "hash": "MTI5NDQ8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50ICAgICAgICAgICAgIDxhIGhyZWY9IiMiPlR3aXR0ZXI8L2E+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgPC9mb290ZXI+CjwvYm9keT4KPC9odG1sPg==",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/most-of-business-is-trivia.html": {
+    "hash": "Mzc0ODwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/no-brainer-attention-arbitrage.html": {
+    "hash": "MTMyMjg8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50ICAgICAgICAgICAgIDxhIGhyZWY9IiMiPlR3aXR0ZXI8L2E+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgPC9mb290ZXI+CjwvYm9keT4KPC9odG1sPg==",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/presence-analytics.html": {
+    "hash": "NDk2MTwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/sharpening-swinging.html": {
+    "hash": "NDYyMjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/simple-content-filters.html": {
+    "hash": "MTQyOTc8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50ICAgICAgICAgICAgIDxhIGhyZWY9IiMiPlR3aXR0ZXI8L2E+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgPC9mb290ZXI+CjwvYm9keT4KPC9odG1sPg==",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/slow-strategy-fast-strategy.html": {
+    "hash": "NDgxNzwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/solving-bigger-problems.html": {
+    "hash": "MTA2Mjk8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50ICAgICAgICAgICAgIDxhIGhyZWY9IiMiPlR3aXR0ZXI8L2E+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgPC9mb290ZXI+CjwvYm9keT4KPC9odG1sPg==",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/suboptimal-the-infinite-game.html": {
+    "hash": "MTMxODc8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50ICAgICAgICAgICAgIDxhIGhyZWY9IiMiPlR3aXR0ZXI8L2E+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgPC9mb290ZXI+CjwvYm9keT4KPC9odG1sPg==",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/whos-on-your-bus.html": {
+    "hash": "NDA2MDwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/why-most-restaurant-marketing-fails.html": {
+    "hash": "MzQyMTwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICA8YSBocmVmPSIjIj5Ud2l0dGVyPC9hPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgIDwvZm9vdGVyPgo8L2JvZHk+CjwvaHRtbD4g",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/why-your-brain-resists-content-and-how-to-make-it-your-most-valuable-asset.html": {
+    "hash": "ODkxNzwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQgICAgICAgICAgICAgPGEgaHJlZj0iIyI+VHdpdHRlcjwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  },
+  "src/thoughts/writing-ignition.html": {
+    "hash": "NzA1NjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnRpdj4KICAgICAgICA8L2Rpdj4KICAgIDwvZm9vdGVyPgoKICAgIDxzY3JpcHQgc3JjPSIvc2NyaXB0cy9tb2JpbGUtbmF2LmpzIj48L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+",
+    "lastMod": "2025-05-31"
+  }
+}
