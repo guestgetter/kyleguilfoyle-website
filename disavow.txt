@@ -1,15 +1,24 @@
 # Disavow file for kyleguilfoyle.com
-# Last updated: 2025-05-23
-# Resubmitted due to persistent canonical hijacking issues
-# Format: domain:example.com or url:http://example.com/page.html
+# Created to remove spam URLs indexed by Google
+# Submit this to Google Search Console -> Disavow Tool
 
-# Hijacked canonical domains - IMMEDIATE DISAVOW
-domain:jimpinson.com
-domain:csbnews.org
+# Pattern-based disavows for spam content
+domain:*.plantronics*
+domain:*.diamond*
+domain:*.nydj*
+domain:*.dragon*ball*
+domain:*.lagerfeld*
+domain:*.watch*
+domain:*product*description*
+domain:*sleepies*
+domain:*dior*
+domain:*malice*
+domain:*roege*
+domain:*vines*candle*
+domain:*cardigan*
+domain:*purse*wallet*
+domain:*zara*
+domain:*baggy*
 
-# Additional suspicious domains that may be causing canonical issues
-# Check your backlink profile for these patterns:
-# domain:spamsite.com
-# domain:another-spam-domain.com
-
-# End of disavow file
+# Specific spammy URLs if needed
+# https://kyleguilfoyle.com/any-specific-spam-url
