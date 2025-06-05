@@ -1,8 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /*.shtml$
 
-# EMERGENCY SPAM BLOCKING - Added May 23, 2025
+# Block known spam patterns specifically
 Disallow: /*plantronics*
 Disallow: /*diamond*ring*
 Disallow: /*nydj*
@@ -10,17 +9,28 @@ Disallow: /*dragon*ball*
 Disallow: /*lagerfeld*
 Disallow: /*watch*
 Disallow: /*product*description*
+Disallow: /*sleepies*
+Disallow: /*dior*
+Disallow: /*malice*
+Disallow: /*roege*
+Disallow: /*vines*candle*
+Disallow: /*cardigan*
+Disallow: /*purse*wallet*
+Disallow: /*zara*
+Disallow: /*baggy*
 
-# Block all bots from accessing these patterns
-Disallow: /*?*
-Disallow: /*&*
-Disallow: /*.php$
+# Block old WordPress structure
 Disallow: /wp-*
+Disallow: /*.php$
 
-# Allow Google to index important content
+# Block development and system files
+Disallow: /.git/
+Disallow: /src/
+Disallow: /scripts/
+
+# Allow Google full access to main content
 User-agent: Googlebot
 Allow: /
-Disallow: /*.shtml$
 Disallow: /*plantronics*
 Disallow: /*diamond*ring*
 Disallow: /*nydj*
@@ -28,10 +38,10 @@ Disallow: /*dragon*ball*
 Disallow: /*lagerfeld*
 Disallow: /*watch*
 Disallow: /*product*description*
-Disallow: /*?*
-Disallow: /*&*
-Disallow: /*.php$
 Disallow: /wp-*
+Disallow: /*.php$
+Disallow: /.git/
+Disallow: /src/
 
 # Sitemap location
 Sitemap: https://kyleguilfoyle.com/sitemap.xml 

@@ -946,6 +946,7 @@
 .story-image img {
     width: 100%;
     max-width: 350px;
+    height: auto;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
