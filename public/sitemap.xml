@@ -2,50 +2,248 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kyleguilfoyle.com/</loc>
-    <lastmod>2023-05-15</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://kyleguilfoyle.com/about.html</loc>
-    <lastmod>2023-05-15</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kyleguilfoyle.com/contact.html</loc>
-    <lastmod>2023-05-15</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kyleguilfoyle.com/guides/restaurant-alchemist.html</loc>
-    <lastmod>2023-05-15</lastmod>
+    <loc>https://kyleguilfoyle.com/thoughts.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/guides/80-20-restaurant-growth-os.html</loc>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kyleguilfoyle.com/guides/80-20-restaurant-growth-os.html</loc>
-    <lastmod>2023-05-15</lastmod>
+    <loc>https://kyleguilfoyle.com/guides/restaurant-alchemist.html</loc>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kyleguilfoyle.com/guides/true-regular-math.html</loc>
-    <lastmod>2023-05-15</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kyleguilfoyle.com/guides/what-is-restaurant-growth-engineering.html</loc>
-    <lastmod>2023-05-15</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kyleguilfoyle.com/thoughts.html</loc>
-    <lastmod>2023-05-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://kyleguilfoyle.com/thoughts/100-alchemy.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
-</urlset> 
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/1m-revenue-growth-operating-systems.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/2-tools-to-make-social-media-fun.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/2021-themes.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/2022-habits-themes-and-goals.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/3-discoveries-and-a-quote.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/3x3x3-method.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/4-workshops-on-local-offense.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/51-2-0-8.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/6-thinking-hats-how-to-think-in-the-same-direction.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/a-breakthrough-model.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/advertising-mindset-shifts-ive-had-to-make.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/brainstorming-vs-listening.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/brick-by-written-brick.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/cold-calling.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/curtis-duggan-small-starts.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/eat-your-customers-complexity.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/enthusiastic-amateur.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/fish-at-your-feet.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/good-model-bad-model.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/how-to-be-everywhere-at-the-right-time.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/most-of-business-is-trivia.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/no-brainer-attention-arbitrage.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/presence-analytics.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/sharpening-swinging.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/simple-content-filters.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/slow-strategy-fast-strategy.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/solving-bigger-problems.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/suboptimal-the-infinite-game.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/whos-on-your-bus.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/why-most-restaurant-marketing-fails.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/why-your-brain-resists-content-and-how-to-make-it-your-most-valuable-asset.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kyleguilfoyle.com/thoughts/writing-ignition.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

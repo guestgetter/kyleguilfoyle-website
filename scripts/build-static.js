@@ -203,6 +203,18 @@ async function buildStatic() {
     console.log('\n🎉 Static site build complete!');
     console.log('📁 All files copied to public/ directory');
     
+    // Generate smart sitemap with accurate lastmod dates
+    console.log('\n🗺️  Generating smart sitemap...');
+    const SitemapGenerator = require('./generate-sitemap.js');
+    const sitemapGenerator = new SitemapGenerator();
+    const hasContentChanges = await sitemapGenerator.generateSitemap();
+    
+    if (hasContentChanges) {
+        console.log('📈 Content changes detected - sitemap updated with fresh dates');
+    } else {
+        console.log('📊 No content changes - sitemap maintains existing dates');
+    }
+    
     // Validate all paths and assets
     console.log('\n🔍 Running path validation...');
     const PathValidator = require('./validate-paths.js');

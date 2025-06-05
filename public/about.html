@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="About - Kyle Guilfoyle | Restaurant Growth Engineer">
     <meta property="og:description" content="Learn about Kyle Guilfoyle, a restaurant growth engineer who helps restaurant owners build systematic growth engines for predictable success.">
-    <meta property="og:image" content="https://kyleguilfoyle.com/kyle-guilfoyle-headshot.jpg">
+    <meta property="og:image" content="https://kyleguilfoyle.com/kyle-guilfoyle-meta-image.png">
     <meta property="og:url" content="https://kyleguilfoyle.com/about.html">
     
     <!-- Structured Data -->
@@ -49,7 +49,21 @@
         "https://www.linkedin.com/in/kyle-guilfoyle/",
         "https://x.com/KyleGuilfoyle",
         "https://www.instagram.com/kyleguilfoyle/",
-        "https://www.youtube.com/@kyleguilfoyle"
+        "https://www.youtube.com/@kyleguilfoyle",
+        "https://open.spotify.com/show/0BFS8DI92GfDXpagS9cIwr"
+      ],
+      "creator": [
+        {
+          "@type": "PodcastSeries",
+          "name": "The Guest Getter Podcast",
+          "url": "https://open.spotify.com/show/0BFS8DI92GfDXpagS9cIwr",
+          "description": "Learn the art and science of getting guests to your restaurant. Every week, Kyle mines insights from innovative restaurant owners, world-class marketers, and lateral thinkers.",
+          "genre": ["Business", "Marketing", "Restaurant Industry"],
+          "creator": {
+            "@type": "Person",
+            "name": "Kyle Guilfoyle"
+          }
+        }
       ]
     }
     </script>
@@ -204,9 +218,69 @@
                     </div>
                     <div class="timeline-item">
                         <span class="year">2023</span>
-                        <h3>The Movement Grows</h3>
-                        <p>Helping restaurant owners worldwide build sustainable growth systems</p>
+                        <h3>The Guest Getter Podcast</h3>
+                        <p>Launched podcast to share insights with restaurant owners worldwide</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Podcast Section -->
+        <section class="podcast-section">
+            <div class="content-wrapper-minimal">
+                <div class="podcast-header">
+                    <div class="podcast-icon">
+                        🎙️
+                    </div>
+                    <div class="podcast-intro">
+                        <h2>The Guest Getter Podcast</h2>
+                        <p class="podcast-tagline">"Learn the art and science of getting guests to your restaurant"</p>
+                        <p>Every week, I share insights from innovative restaurant owners, world-class marketers, and lateral thinkers. Get the tools you need to win with your food service business.</p>
+                    </div>
+                </div>
+
+                <!-- Spotify Embed -->
+                <div class="podcast-player">
+                    <iframe 
+                        style="border-radius:12px" 
+                        src="https://open.spotify.com/embed/show/0BFS8DI92GfDXpagS9cIwr?utm_source=generator&theme=0" 
+                        width="100%" 
+                        height="352" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+                <!-- Featured Episodes -->
+                <div class="featured-episodes">
+                    <h3>Recent Episodes</h3>
+                    <div class="episodes-grid">
+                        <div class="episode-card">
+                            <h4>Rent Is Due Every Day: Lessons from a 3-Restaurant Owner at 30</h4>
+                            <p>Sid Hall owns three restaurants in Virginia and is opening a fourth. Learn grounded, tactical strategies for operators who want to build something that lasts.</p>
+                            <span class="episode-meta">May 5 • 38 min</span>
+                        </div>
+                        <div class="episode-card">
+                            <h4>Avinash Kaushik's 'Out of Sight' Marketing Secrets</h4>
+                            <p>Fortune 500 marketing secrets adapted for restaurants. Learn how to turn overwhelming data into simple wins and maximize loyalty with smart strategies.</p>
+                            <span class="episode-meta">Nov 6, 2024 • 47 min</span>
+                        </div>
+                        <div class="episode-card">
+                            <h4>The Recipe For Scale: How Kyle Tweter Grew El Furniture Warehouse to 19 Locations</h4>
+                            <p>From bus boy to 19 locations across Canada and the U.S. Learn the practical lessons behind systematic restaurant scaling.</p>
+                            <span class="episode-meta">Aug 20, 2024 • 20 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Podcast CTA -->
+                <div class="podcast-cta">
+                    <a href="https://open.spotify.com/show/0BFS8DI92GfDXpagS9cIwr" target="_blank" rel="noopener noreferrer" class="podcast-button">
+                        🎧 Listen on Spotify
+                    </a>
+                    <p class="podcast-note">Available on all major podcast platforms</p>
                 </div>
             </div>
         </section>
@@ -341,6 +415,7 @@
             <p>&copy; 2025 Kyle Guilfoyle. All rights reserved.</p>
             <div class="social-links">
                 <a href="thoughts.html">Thoughts</a>
+                <a href="https://open.spotify.com/show/0BFS8DI92GfDXpagS9cIwr" target="_blank" rel="noopener noreferrer">🎙️ Podcast</a>
                 <a href="https://www.linkedin.com/in/kyle-guilfoyle/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://x.com/KyleGuilfoyle" target="_blank" rel="noopener noreferrer">X</a>
                 <a href="https://www.instagram.com/kyleguilfoyle/" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -349,7 +424,8 @@
         </div>
     </footer>
 
-    <script src="/scripts/forms.js"></script>
     <script src="/scripts/mobile-nav.js"></script>
+    <script src="scripts/email-notifications.js"></script>
+    <script src="scripts/forms.js"></script>
 </body>
 </html> 
