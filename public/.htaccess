@@ -1,120 +1,75 @@
-# Kyle Guilfoyle Website .htaccess
-# Comprehensive redirects and SEO optimization
-
-# Enable Apache mod_rewrite
 RewriteEngine On
 
-# Force HTTPS and WWW removal
-RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} ^www\. [NC]
-RewriteRule ^ https://kyleguilfoyle.com%{REQUEST_URI} [R=301,L]
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Ensure trailing slash for homepage
-RewriteRule ^$ / [R=301,L]
-
-# Remove trailing slashes from all other URLs except directories
+# Remove trailing slash from URLs (except for directories)
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} (.+)/$
-RewriteRule ^ %1 [R=301,L]
+RewriteCond %{THE_REQUEST} /([^.]+)\.html(\?[^\s]*)?(?:\s|$) [NC]
+RewriteRule ^ /%1/ [R=301,L]
 
-# ========================================
-# WordPress to Static Site Redirects
-# ========================================
+# Redirect .html to clean URLs
+RewriteCond %{THE_REQUEST} /([^.]+)\.html(\?[^\s]*)?(?:\s|$) [NC]
+RewriteRule ^ /%1/ [R=301,L]
 
-# Redirect old WordPress post URLs to new structure
-# Pattern: /2021/01/post-name/ -> /thoughts/post-name.html
-RewriteRule ^(\d{4})/(\d{2})/([^/]+)/?$ /thoughts/$3.html [R=301,L]
+# Canonical URL redirects for main pages
+RewriteRule ^about\.html$ /about [R=301,L]
+RewriteRule ^contact\.html$ /contact [R=301,L]
+RewriteRule ^thoughts\.html$ /thoughts [R=301,L]
 
-# Redirect old WordPress category pages
-RewriteRule ^category/(.+)/?$ /thoughts.html [R=301,L]
-
-# Redirect old WordPress author pages
-RewriteRule ^author/(.+)/?$ /about.html [R=301,L]
-
-# Redirect old WordPress admin, login, wp-content URLs
-RewriteRule ^wp-admin/?.*$ / [R=301,L]
-RewriteRule ^wp-login\.php.*$ / [R=301,L]
-RewriteRule ^wp-content/.*$ / [R=301,L]
-RewriteRule ^wp-includes/.*$ / [R=301,L]
-
-# Block access to WordPress files that might still exist
-RewriteRule ^wp-config\.php$ - [F,L]
-RewriteRule ^\.htaccess$ - [F,L]
-
-# ========================================
-# Spam URL Blocking & Redirects
-# ========================================
-
-# Block and redirect known spam patterns
-RewriteCond %{REQUEST_URI} (plantronics|diamond.*ring|nydj|dragon.*ball|lagerfeld|watch|product.*description|sleepies|dior|malice|roege|vines.*candle|cardigan|purse.*wallet|zara|baggy) [NC]
-RewriteRule .* / [R=301,L]
-
-# ========================================
-# File Extensions and Clean URLs
-# ========================================
-
-# Remove .html extension from URLs
-RewriteCond %{REQUEST_FILENAME} !-d
+# Internal rewrite to serve .html files for clean URLs
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.html [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^.]+)/?$ $1.html [L]
 
-# Redirect .html URLs to clean URLs (except for actual files)
-RewriteCond %{THE_REQUEST} /([^.]+)\.html[\s?] [NC]
-RewriteRule ^ /%1 [R=301,L]
+# Handle directory-based clean URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^([^.]+)$ $1/ [R=301,L]
 
-# ========================================
-# Security Headers
-# ========================================
+# Security headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 
-<IfModule mod_headers.c>
-    # Security headers
-    Header always set X-Content-Type-Options nosniff
-    Header always set X-Frame-Options DENY
-    Header always set X-XSS-Protection "1; mode=block"
-    Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-    
-    # Cache headers for static assets
-    <FilesMatch "\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf)$">
-        Header set Cache-Control "public, max-age=31536000, immutable"
-    </FilesMatch>
-    
-    # Cache headers for HTML
-    <FilesMatch "\.html$">
-        Header set Cache-Control "public, max-age=3600"
-    </FilesMatch>
+# Cache control
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType application/xml "access plus 1 hour"
+    ExpiresByType text/xml "access plus 1 hour"
 </IfModule>
 
-# ========================================
-# GZIP Compression
-# ========================================
+# Spam URL blocking - return 410 Gone for old spam patterns
+RewriteRule ^.*plantronics.*$ - [R=410,L]
+RewriteRule ^.*diamond.*ring.*$ - [R=410,L]
+RewriteRule ^.*nydj.*$ - [R=410,L]
+RewriteRule ^.*dragon.*ball.*$ - [R=410,L]
+RewriteRule ^.*lagerfeld.*$ - [R=410,L]
+RewriteRule ^.*watch.*$ - [R=410,L]
+RewriteRule ^.*product.*description.*$ - [R=410,L]
+RewriteRule ^.*sleepies.*$ - [R=410,L]
+RewriteRule ^.*dior.*$ - [R=410,L]
+RewriteRule ^.*malice.*$ - [R=410,L]
+RewriteRule ^.*roege.*$ - [R=410,L]
+RewriteRule ^.*vines.*candle.*$ - [R=410,L]
+RewriteRule ^.*cardigan.*$ - [R=410,L]
+RewriteRule ^.*purse.*wallet.*$ - [R=410,L]
+RewriteRule ^.*zara.*$ - [R=410,L]
+RewriteRule ^.*baggy.*$ - [R=410,L]
 
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/plain
-    AddOutputFilterByType DEFLATE text/html
-    AddOutputFilterByType DEFLATE text/xml
-    AddOutputFilterByType DEFLATE text/css
-    AddOutputFilterByType DEFLATE application/xml
-    AddOutputFilterByType DEFLATE application/xhtml+xml
-    AddOutputFilterByType DEFLATE application/rss+xml
-    AddOutputFilterByType DEFLATE application/javascript
-    AddOutputFilterByType DEFLATE application/x-javascript
-    AddOutputFilterByType DEFLATE image/svg+xml
-</IfModule>
-
-# ========================================
-# Error Pages
-# ========================================
-
-ErrorDocument 404 /404.html
-ErrorDocument 500 /404.html
-
-# ========================================
-# MIME Types
-# ========================================
-
-<IfModule mod_mime.c>
-    AddType text/css .css
-    AddType application/javascript .js
-    AddType image/svg+xml .svg
-</IfModule> 
+# Block WordPress and old structure
+RewriteRule ^wp-.*$ - [R=410,L]
+RewriteRule ^.*\.php$ - [R=410,L] 
