@@ -52,9 +52,6 @@ async function buildStatic() {
     // Files to copy to public directory
     const filesToCopy = [
         'src/index.html',
-        'src/about.html',
-        'src/contact.html',
-        'src/thoughts.html',
         'src/404.html',
         'src/style.css',
         'src/about.css',
@@ -106,8 +103,27 @@ async function buildStatic() {
         }
     }
     
+    // Create clean URL directories and copy HTML files for SEO-friendly URLs
+    const cleanUrls = [
+        { src: 'src/about.html', dest: 'about/index.html' },
+        { src: 'src/contact.html', dest: 'contact/index.html' },
+        { src: 'src/thoughts.html', dest: 'thoughts/index.html' }
+    ];
+    
+    for (const { src, dest } of cleanUrls) {
+        try {
+            await fs.access(src);
+            const destPath = path.join(publicDir, dest);
+            await fs.mkdir(path.dirname(destPath), { recursive: true });
+            await copyFile(src, destPath);
+            console.log(`✅ Created clean URL: ${dest}`);
+        } catch (error) {
+            console.log(`⚠️  Could not create clean URL for ${dest}:`, error.message);
+        }
+    }
+    
     // Fix CSS and JS paths in HTML files after copying
-    const htmlFiles = ['index.html', 'about.html', 'contact.html', 'thoughts.html', '404.html'];
+    const htmlFiles = ['index.html', '404.html', 'about/index.html', 'contact/index.html', 'thoughts/index.html'];
     
     for (const htmlFile of htmlFiles) {
         try {
@@ -125,6 +141,22 @@ async function buildStatic() {
             content = content.replace(/src="analytics\.js"/g, 'src="/scripts/analytics.js"');
             content = content.replace(/src="forms\.js"/g, 'src="/scripts/forms.js"');
             content = content.replace(/src="mobile-nav\.js"/g, 'src="/scripts/mobile-nav.js"');
+            
+            // Fix navigation links to use clean URLs
+            content = content.replace(/href="\/about\.html"/g, 'href="/about"');
+            content = content.replace(/href="\/contact\.html"/g, 'href="/contact"');
+            content = content.replace(/href="\/thoughts\.html"/g, 'href="/thoughts"');
+            content = content.replace(/href="about\.html"/g, 'href="/about"');
+            content = content.replace(/href="contact\.html"/g, 'href="/contact"');
+            content = content.replace(/href="thoughts\.html"/g, 'href="/thoughts"');
+            
+            // Fix guide links to use clean URLs
+            content = content.replace(/href="guides\/([^"]+)\.html"/g, 'href="/guides/$1"');
+            
+            // Fix JavaScript paths for subdirectory files (about/, contact/, thoughts/)
+            if (htmlFile.includes('/')) {
+                content = content.replace(/src="scripts\//g, 'src="/scripts/');
+            }
             
             await fs.writeFile(filePath, content);
             console.log(`✅ Fixed paths in: ${htmlFile}`);
@@ -149,11 +181,16 @@ async function buildStatic() {
                 content = content.replace(/src="\/scripts\/mobile-nav\.js"/g, 'src="/scripts/mobile-nav.js"');
                 content = content.replace(/src="\/scripts\/thoughts\.js"/g, 'src="/scripts/thoughts.js"');
                 
-                // Fix navigation links
+                // Fix navigation links to use clean URLs
                 content = content.replace(/href="\.\.\/index\.html"/g, 'href="/"');
-                content = content.replace(/href="\.\.\/about\.html"/g, 'href="/about.html"');
-                content = content.replace(/href="\.\.\/contact\.html"/g, 'href="/contact.html"');
-                content = content.replace(/href="\.\.\/thoughts\.html"/g, 'href="/thoughts.html"');
+                content = content.replace(/href="\.\.\/about\.html"/g, 'href="/about"');
+                content = content.replace(/href="\.\.\/contact\.html"/g, 'href="/contact"');
+                content = content.replace(/href="\.\.\/thoughts\.html"/g, 'href="/thoughts"');
+                
+                // Fix any remaining .html links to clean URLs
+                content = content.replace(/href="\/about\.html"/g, 'href="/about"');
+                content = content.replace(/href="\/contact\.html"/g, 'href="/contact"');
+                content = content.replace(/href="\/thoughts\.html"/g, 'href="/thoughts"');
                 
                 // Fix favicon paths
                 content = content.replace(/href="\/favicon\//g, 'href="/favicon/');
@@ -183,11 +220,16 @@ async function buildStatic() {
                 content = content.replace(/src="\/scripts\/mobile-nav\.js"/g, 'src="/scripts/mobile-nav.js"');
                 content = content.replace(/src="\/scripts\/thoughts\.js"/g, 'src="/scripts/thoughts.js"');
                 
-                // Fix navigation links
+                // Fix navigation links to use clean URLs
                 content = content.replace(/href="\.\.\/index\.html"/g, 'href="/"');
-                content = content.replace(/href="\.\.\/about\.html"/g, 'href="/about.html"');
-                content = content.replace(/href="\.\.\/contact\.html"/g, 'href="/contact.html"');
-                content = content.replace(/href="\.\.\/thoughts\.html"/g, 'href="/thoughts.html"');
+                content = content.replace(/href="\.\.\/about\.html"/g, 'href="/about"');
+                content = content.replace(/href="\.\.\/contact\.html"/g, 'href="/contact"');
+                content = content.replace(/href="\.\.\/thoughts\.html"/g, 'href="/thoughts"');
+                
+                // Fix any remaining .html links to clean URLs
+                content = content.replace(/href="\/about\.html"/g, 'href="/about"');
+                content = content.replace(/href="\/contact\.html"/g, 'href="/contact"');
+                content = content.replace(/href="\/thoughts\.html"/g, 'href="/thoughts"');
                 
                 // Fix favicon paths
                 content = content.replace(/href="\/favicon\//g, 'href="/favicon/');
