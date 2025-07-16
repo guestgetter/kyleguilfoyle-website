@@ -41,7 +41,7 @@ const createThoughtCard = (post) => {
 async function loadThoughts() {
     try {
         // Determine if we're on the archive page
-        const isArchivePage = window.location.pathname.includes('thoughts.html') || window.location.pathname.includes('/thoughts');
+        const isArchivePage = window.location.pathname.includes('thoughts.html');
         
         // Try to load merged content first, fallback to original thoughts.json
         let response;
