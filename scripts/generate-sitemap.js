@@ -77,19 +77,19 @@ class SitemapGenerator {
                 filePath: 'src/index.html'
             },
             { 
-                url: '/about.html', 
+                url: '/about', 
                 priority: '0.8', 
                 changefreq: 'monthly',
                 filePath: 'src/about.html'
             },
             { 
-                url: '/contact.html', 
+                url: '/contact', 
                 priority: '0.8', 
                 changefreq: 'monthly',
                 filePath: 'src/contact.html'
             },
             { 
-                url: '/thoughts.html', 
+                url: '/thoughts', 
                 priority: '0.6', 
                 changefreq: 'weekly',
                 filePath: 'src/thoughts.html'
