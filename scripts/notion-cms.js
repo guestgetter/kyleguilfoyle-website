@@ -489,9 +489,9 @@ class NotionCMS {
             <span class="hamburger-line"></span>
         </button>
         <div class="nav-links">
-            <a href="../about.html">About</a>
-            <a href="../index.html#topics">Topics</a>
-            <a href="../contact.html">Contact</a>
+            <a href="../about">About</a>
+            <a href="/#topics">Topics</a>
+            <a href="../contact">Contact</a>
             
             <!-- Social Media Icons - Mobile Only -->
             <div class="mobile-social-icons">
@@ -516,7 +516,7 @@ class NotionCMS {
         </div>
         
         <footer class="thought-footer">
-            <a href="../thoughts.html" class="back-link">← Back to Thoughts</a>
+                            <a href="../thoughts" class="back-link">← Back to Thoughts</a>
         </footer>
     </article>
 
@@ -525,7 +525,7 @@ class NotionCMS {
         <div class="footer-content">
             <p>&copy; 2024 Kyle Guilfoyle. All rights reserved.</p>
             <div class="social-links">
-                <a href="../thoughts.html">Thoughts</a>
+                <a href="../thoughts">Thoughts</a>
                 <a href="#">LinkedIn</a>
                 <a href="#">GitHub</a>
                 <a href="#">Twitter</a>
