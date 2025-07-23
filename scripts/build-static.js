@@ -150,8 +150,8 @@ async function buildStatic() {
             content = content.replace(/href="contact\.html"/g, 'href="/contact"');
             content = content.replace(/href="thoughts\.html"/g, 'href="/thoughts"');
             
-            // Fix guide links to use clean URLs
-            content = content.replace(/href="guides\/([^"]+)\.html"/g, 'href="/guides/$1"');
+            // Keep .html extensions for guide links (guides don't have clean URLs on hosting)
+            // content = content.replace(/href="guides\/([^"]+)\.html"/g, 'href="/guides/$1"');
             
             // Fix JavaScript paths for subdirectory files (about/, contact/, thoughts/)
             if (htmlFile.includes('/')) {
@@ -226,10 +226,11 @@ async function buildStatic() {
                 content = content.replace(/href="\.\.\/contact\.html"/g, 'href="/contact"');
                 content = content.replace(/href="\.\.\/thoughts\.html"/g, 'href="/thoughts"');
                 
-                // Fix any remaining .html links to clean URLs
+                // Fix any remaining .html links to clean URLs (except guides)
                 content = content.replace(/href="\/about\.html"/g, 'href="/about"');
                 content = content.replace(/href="\/contact\.html"/g, 'href="/contact"');
                 content = content.replace(/href="\/thoughts\.html"/g, 'href="/thoughts"');
+                // Keep .html extensions for guide links since they don't have clean URLs
                 
                 // Fix favicon paths
                 content = content.replace(/href="\/favicon\//g, 'href="/favicon/');
