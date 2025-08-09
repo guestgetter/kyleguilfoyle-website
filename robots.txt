@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
 
+# Reduce spammy/parameterized URL crawl budget (we do not use query params)
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*=*
+Disallow: /*.cgi*
+
 # Block known spam patterns specifically
 Disallow: /*plantronics*
 Disallow: /*diamond*ring*
@@ -26,22 +32,7 @@ Disallow: /*.php$
 # Block development and system files
 Disallow: /.git/
 Disallow: /src/
-Disallow: /scripts/
-
-# Allow Google full access to main content
-User-agent: Googlebot
-Allow: /
-Disallow: /*plantronics*
-Disallow: /*diamond*ring*
-Disallow: /*nydj*
-Disallow: /*dragon*ball*
-Disallow: /*lagerfeld*
-Disallow: /*watch*
-Disallow: /*product*description*
-Disallow: /wp-*
-Disallow: /*.php$
-Disallow: /.git/
-Disallow: /src/
+# Note: do NOT block /scripts/ so Google can fetch JS/CSS
 
 # Sitemap location
-Sitemap: https://kyleguilfoyle.com/sitemap.xml 
+Sitemap: https://kyleguilfoyle.com/sitemap.xml
