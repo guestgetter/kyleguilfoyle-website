@@ -1,6 +1,15 @@
 # Disavow file for kyleguilfoyle.com
-# Created to remove spam URLs indexed by Google
+# Last updated: October 12, 2025
 # Submit this to Google Search Console -> Disavow Tool
+# These domains are conducting canonical hijacking attacks
+
+# CRITICAL: Specific spam sites conducting canonical hijacking attacks
+domain:vilamedievalsti.com.br
+domain:kemcappeladobogados.com.br
+domain:www.vilamedievalsti.com.br
+domain:www.kemcappeladobogados.com.br
+domain:jimpinson.com
+domain:csbnews.org
 
 # Pattern-based disavows for spam content
 domain:*.plantronics*
@@ -19,6 +28,3 @@ domain:*cardigan*
 domain:*purse*wallet*
 domain:*zara*
 domain:*baggy*
-
-# Specific spammy URLs if needed
-# https://kyleguilfoyle.com/any-specific-spam-url
