@@ -87,6 +87,7 @@ async function buildStatic() {
     const directoriesToCopy = [
         'src/thoughts',
         'src/guides',
+        'src/there-is-no-rose',
         'images',
         'favicon',
         'scripts',
