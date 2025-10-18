@@ -107,7 +107,8 @@ async function buildStatic() {
     const cleanUrls = [
         { src: 'src/about.html', dest: 'about/index.html' },
         { src: 'src/contact.html', dest: 'contact/index.html' },
-        { src: 'src/thoughts.html', dest: 'thoughts/index.html' }
+        { src: 'src/thoughts.html', dest: 'thoughts/index.html' },
+        { src: 'src/there-is-no-rose.html', dest: 'there-is-no-rose/index.html' }
     ];
     
     for (const { src, dest } of cleanUrls) {
@@ -123,7 +124,7 @@ async function buildStatic() {
     }
     
     // Fix CSS and JS paths in HTML files after copying
-    const htmlFiles = ['index.html', '404.html', 'about/index.html', 'contact/index.html', 'thoughts/index.html'];
+    const htmlFiles = ['index.html', '404.html', 'about/index.html', 'contact/index.html', 'thoughts/index.html', 'there-is-no-rose/index.html'];
     
     for (const htmlFile of htmlFiles) {
         try {
