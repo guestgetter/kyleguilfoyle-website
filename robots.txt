@@ -1,38 +1,30 @@
 User-agent: *
 Allow: /
 
-# Reduce spammy/parameterized URL crawl budget (we do not use query params)
-Disallow: /*?*
-Disallow: /*&*
-Disallow: /*=*
-Disallow: /*.cgi*
+# Block old WordPress structure (return 410 in nginx)
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
 
-# Block known spam patterns specifically
+# Block known spam patterns (return 410 in nginx)
 Disallow: /*plantronics*
 Disallow: /*diamond*ring*
 Disallow: /*nydj*
 Disallow: /*dragon*ball*
 Disallow: /*lagerfeld*
-Disallow: /*watch*
 Disallow: /*product*description*
-Disallow: /*sleepies*
-Disallow: /*dior*
-Disallow: /*malice*
-Disallow: /*roege*
-Disallow: /*vines*candle*
-Disallow: /*cardigan*
-Disallow: /*purse*wallet*
-Disallow: /*zara*
-Disallow: /*baggy*
 
-# Block old WordPress structure
-Disallow: /wp-*
-Disallow: /*.php$
-
-# Block development and system files
+# Block development files
 Disallow: /.git/
 Disallow: /src/
-# Note: do NOT block /scripts/ so Google can fetch JS/CSS
+Disallow: /node_modules/
+
+# Allow all JavaScript and CSS for proper rendering
+Allow: /scripts/*.js
+Allow: /*.css
+Allow: /*.js
 
 # Sitemap location
 Sitemap: https://kyleguilfoyle.com/sitemap.xml
