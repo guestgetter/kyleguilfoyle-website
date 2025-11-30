@@ -7,24 +7,6 @@ Disallow: /*&*
 Disallow: /*=*
 Disallow: /*.cgi*
 
-# Block known spam patterns specifically
-Disallow: /*plantronics*
-Disallow: /*diamond*ring*
-Disallow: /*nydj*
-Disallow: /*dragon*ball*
-Disallow: /*lagerfeld*
-Disallow: /*watch*
-Disallow: /*product*description*
-Disallow: /*sleepies*
-Disallow: /*dior*
-Disallow: /*malice*
-Disallow: /*roege*
-Disallow: /*vines*candle*
-Disallow: /*cardigan*
-Disallow: /*purse*wallet*
-Disallow: /*zara*
-Disallow: /*baggy*
-
 # Block old WordPress structure
 Disallow: /wp-*
 Disallow: /*.php$
@@ -32,7 +14,6 @@ Disallow: /*.php$
 # Block development and system files
 Disallow: /.git/
 Disallow: /src/
-# Note: do NOT block /scripts/ so Google can fetch JS/CSS
 
 # Sitemap location
 Sitemap: https://kyleguilfoyle.com/sitemap.xml

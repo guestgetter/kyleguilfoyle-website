@@ -1,9 +1,90 @@
 {
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    },
+    {
+      "source": "/(.*plantronics.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*diamond.*ring.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*nydj.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*dragon.*ball.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*lagerfeld.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*watch.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*product.*description.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*sleepies.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*dior.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*malice.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*roege.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*vines.*candle.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*cardigan.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*purse.*wallet.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*zara.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    },
+    {
+      "source": "/(.*baggy.*)",
+      "headers": [ { "key": "X-Robots-Tag", "value": "noindex, noarchive" } ]
+    }
+  ],
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/about.html", "destination": "/about", "permanent": true },
     { "source": "/contact.html", "destination": "/contact", "permanent": true }
   ]
 }
-
-
