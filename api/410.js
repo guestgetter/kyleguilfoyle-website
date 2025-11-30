@@ -1,0 +1,50 @@
+// Vercel Serverless Function to return 410 status
+// This handles all spam and WordPress URLs
+
+export default function handler(req, res) {
+  res.status(410).send(`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>410 - Gone</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { text-align: center; max-width: 600px; }
+        h1 { font-size: 120px; font-weight: 700; margin-bottom: 20px; color: #ff6b6b; }
+        h2 { font-size: 32px; font-weight: 600; margin-bottom: 20px; }
+        p { font-size: 18px; line-height: 1.6; color: #cccccc; margin-bottom: 40px; }
+        a {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        a:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>410</h1>
+        <h2>Gone</h2>
+        <p>This page has been permanently removed and will not be coming back. This was likely spam content from a previous version of this website.</p>
+        <a href="/">Go to Homepage</a>
+    </div>
+</body>
+</html>`);
+}
+

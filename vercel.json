@@ -1,9 +1,196 @@
 {
+  "version": 2,
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  
   "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/about.html", "destination": "/about", "permanent": true },
-    { "source": "/contact.html", "destination": "/contact", "permanent": true }
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/thoughts.html",
+      "destination": "/thoughts",
+      "permanent": true
+    },
+    
+    {
+      "source": "/www.:path*",
+      "destination": "https://kyleguilfoyle.com/:path*",
+      "permanent": true
+    },
+    
+    {
+      "source": "/:year(\\d{4})/:month(\\d{2})/:slug*",
+      "destination": "/thoughts/:slug",
+      "permanent": true
+    },
+    
+    {
+      "source": "/category/:path*",
+      "destination": "/thoughts",
+      "permanent": true
+    },
+    
+    {
+      "source": "/author/:path*",
+      "destination": "/about",
+      "permanent": true
+    },
+    
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/:path*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/wp-includes/:path*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/410",
+      "permanent": true
+    },
+    
+    {
+      "source": "/:path*plantronics:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*diamond:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*nydj:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*dragon:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*lagerfeld:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*sleepies:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*dior:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*malice:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*roege:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*cardigan:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*purse:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*wallet:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*zara:rest*",
+      "destination": "/410",
+      "permanent": true
+    },
+    {
+      "source": "/:path*baggy:rest*",
+      "destination": "/410",
+      "permanent": true
+    }
+  ],
+  
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), microphone=(), camera=()"
+        }
+      ]
+    },
+    {
+      "source": "/410",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(jpg|jpeg|png|gif|ico|svg|webp|css|js|woff|woff2|ttf|eot))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
   ]
 }
-
-
