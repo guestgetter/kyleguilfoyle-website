@@ -1,3 +1,6 @@
+# Sitemap location - PRIORITY
+Sitemap: https://kyleguilfoyle.com/sitemap.xml
+
 User-agent: *
 Allow: /
 
@@ -24,6 +27,7 @@ Disallow: /*cardigan*
 Disallow: /*purse*wallet*
 Disallow: /*zara*
 Disallow: /*baggy*
+Disallow: /*getefs*
 
 # Block old WordPress structure
 Disallow: /wp-*
@@ -33,6 +37,3 @@ Disallow: /*.php$
 Disallow: /.git/
 Disallow: /src/
 # Note: do NOT block /scripts/ so Google can fetch JS/CSS
-
-# Sitemap location
-Sitemap: https://kyleguilfoyle.com/sitemap.xml

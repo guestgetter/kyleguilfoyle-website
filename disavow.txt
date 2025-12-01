@@ -1,30 +1,11 @@
 # Disavow file for kyleguilfoyle.com
-# Last updated: October 12, 2025
+# Last updated: December 1, 2025
 # Submit this to Google Search Console -> Disavow Tool
-# These domains are conducting canonical hijacking attacks
 
-# CRITICAL: Specific spam sites conducting canonical hijacking attacks
+# CRITICAL: Spam sites conducting canonical hijacking attacks
 domain:vilamedievalsti.com.br
 domain:kemcappeladobogados.com.br
-domain:www.vilamedievalsti.com.br
-domain:www.kemcappeladobogados.com.br
 domain:jimpinson.com
 domain:csbnews.org
-
-# Pattern-based disavows for spam content
-domain:*.plantronics*
-domain:*.diamond*
-domain:*.nydj*
-domain:*.dragon*ball*
-domain:*.lagerfeld*
-domain:*.watch*
-domain:*product*description*
-domain:*sleepies*
-domain:*dior*
-domain:*malice*
-domain:*roege*
-domain:*vines*candle*
-domain:*cardigan*
-domain:*purse*wallet*
-domain:*zara*
-domain:*baggy*
+domain:getefs.com
+domain:www.getefs.com
