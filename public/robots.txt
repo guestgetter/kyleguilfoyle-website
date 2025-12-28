@@ -1,22 +1,41 @@
-# Sitemap location - PRIORITY
+# Sitemap - Highest Priority
 Sitemap: https://kyleguilfoyle.com/sitemap.xml
+
+# Main crawlers - Allow everything
+User-agent: Googlebot
+Allow: /
+Disallow: /404.html
+
+User-agent: Bingbot
+Allow: /
+Disallow: /404.html
 
 User-agent: *
 Allow: /
+Disallow: /404.html
 
-# Reduce spammy/parameterized URL crawl budget (we do not use query params)
+# Reduce spammy/parameterized URL crawl budget
 Disallow: /*?*
 Disallow: /*&*
 Disallow: /*=*
 Disallow: /*.cgi*
+Disallow: /*.php$
 
-# Block known spam patterns specifically
+# Block development and system files
+Disallow: /.git/
+Disallow: /src/
+Disallow: /node_modules/
+
+# Block old WordPress structure (legacy patterns)
+Disallow: /wp-*
+
+# Block known spam product patterns that attackers try to index
+# These should return 404/410 anyway, but belt-and-suspenders
 Disallow: /*plantronics*
 Disallow: /*diamond*ring*
 Disallow: /*nydj*
 Disallow: /*dragon*ball*
 Disallow: /*lagerfeld*
-Disallow: /*watch*
 Disallow: /*product*description*
 Disallow: /*sleepies*
 Disallow: /*dior*
@@ -28,12 +47,8 @@ Disallow: /*purse*wallet*
 Disallow: /*zara*
 Disallow: /*baggy*
 Disallow: /*getefs*
-
-# Block old WordPress structure
-Disallow: /wp-*
-Disallow: /*.php$
-
-# Block development and system files
-Disallow: /.git/
-Disallow: /src/
-# Note: do NOT block /scripts/ so Google can fetch JS/CSS
+Disallow: /*louis*vuitton*
+Disallow: /*salvatore*ferragamo*
+Disallow: /*madewell*
+Disallow: /*hasbro*
+Disallow: /*bruce*springsteen*

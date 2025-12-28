@@ -1,11 +1,26 @@
 # Disavow file for kyleguilfoyle.com
-# Last updated: December 1, 2025
+# Last updated: December 25, 2025
 # Submit this to Google Search Console -> Disavow Tool
+# IMPORTANT: After updating, go to https://search.google.com/search-console/disavow-links
+# and re-upload this file!
 
 # CRITICAL: Spam sites conducting canonical hijacking attacks
+# These domains are scraping/referencing your content and confusing Google's canonical selection
+
+# Brazilian spam domains
 domain:vilamedievalsti.com.br
 domain:kemcappeladobogados.com.br
+
+# Current active attacker (as of Dec 2025)
+domain:asseryassin.com
+domain:www.asseryassin.com
+
+# Historical attackers
 domain:jimpinson.com
 domain:csbnews.org
 domain:getefs.com
 domain:www.getefs.com
+
+# Generic spam link farms (common in negative SEO)
+domain:spamlinks.xyz
+domain:linkspam.net
