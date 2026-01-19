@@ -1,11 +1,16 @@
 # Disavow file for kyleguilfoyle.com
-# Last updated: December 25, 2025
+# Last updated: January 19, 2026
 # Submit this to Google Search Console -> Disavow Tool
 # IMPORTANT: After updating, go to https://search.google.com/search-console/disavow-links
 # and re-upload this file!
 
 # CRITICAL: Spam sites conducting canonical hijacking attacks
 # These domains are scraping/referencing your content and confusing Google's canonical selection
+
+# ACTIVE ATTACKER - January 2026
+# This French spam domain is hijacking your homepage canonical!
+domain:zoumai.fr
+domain:www.zoumai.fr
 
 # Brazilian spam domains
 domain:vilamedievalsti.com.br
