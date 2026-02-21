@@ -186,15 +186,28 @@ async function buildStatic() {
                 content = content.replace(/href="\.\.\/about\.html"/g, 'href="/about"');
                 content = content.replace(/href="\.\.\/contact\.html"/g, 'href="/contact"');
                 content = content.replace(/href="\.\.\/thoughts\.html"/g, 'href="/thoughts"');
-                
+
                 // Fix any remaining .html links to clean URLs
                 content = content.replace(/href="\/about\.html"/g, 'href="/about"');
                 content = content.replace(/href="\/contact\.html"/g, 'href="/contact"');
                 content = content.replace(/href="\/thoughts\.html"/g, 'href="/thoughts"');
-                
+
+                // Fix broken anchor links that should be page links (SEO fix)
+                content = content.replace(/href="\/#about"/g, 'href="/about"');
+
+                // Add /thoughts link to nav if missing (SEO: improves internal linking)
+                // Check specifically within the nav-links div (not back-links elsewhere)
+                const navMatch = content.match(/<div class="nav-links">([\s\S]*?)<\/div>/);
+                if (navMatch && !navMatch[1].includes('href="/thoughts"')) {
+                    content = content.replace(
+                        /(<div class="nav-links">\s*<a href="\/about">About<\/a>)/,
+                        '$1\n            <a href="/thoughts">Thoughts</a>'
+                    );
+                }
+
                 // Fix favicon paths
                 content = content.replace(/href="\/favicon\//g, 'href="/favicon/');
-                
+
                 await fs.writeFile(filePath, content);
                 console.log(`✅ Fixed paths in: thoughts/${file}`);
             }
@@ -231,10 +244,19 @@ async function buildStatic() {
                 content = content.replace(/href="\/contact\.html"/g, 'href="/contact"');
                 content = content.replace(/href="\/thoughts\.html"/g, 'href="/thoughts"');
                 // Keep .html extensions for guide links since they don't have clean URLs
-                
+
+                // Add /thoughts link to nav if missing (SEO: improves internal linking)
+                const guideNavMatch = content.match(/<div class="nav-links">([\s\S]*?)<\/div>/);
+                if (guideNavMatch && !guideNavMatch[1].includes('href="/thoughts"')) {
+                    content = content.replace(
+                        /(<a href="\/about">About<\/a>)\s+(<a href="\/\#topics">)/,
+                        '$1\n            <a href="/thoughts">Thoughts</a>\n            $2'
+                    );
+                }
+
                 // Fix favicon paths
                 content = content.replace(/href="\/favicon\//g, 'href="/favicon/');
-                
+
                 await fs.writeFile(filePath, content);
                 console.log(`✅ Fixed paths in: guides/${file}`);
             }

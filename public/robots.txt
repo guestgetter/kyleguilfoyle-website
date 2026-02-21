@@ -14,8 +14,12 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
-# Reduce spammy/parameterized URL crawl budget
+# Reduce spammy/parameterized URL crawl budget (we do not use query params)
+# Allow legitimate tracking parameters while blocking spam
 Disallow: /*?*
+Allow: /*?utm_*
+Allow: /*?fbclid*
+Allow: /*?gclid*
 Disallow: /*&*
 Disallow: /*=*
 Disallow: /*.cgi*

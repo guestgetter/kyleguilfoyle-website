@@ -185,8 +185,14 @@ class SitemapGenerator {
         
         sitemap += `</urlset>`;
 
-        // Write sitemap
+        // Write sitemap to both root and public directory
         await fs.writeFile('sitemap.xml', sitemap);
+        try {
+            await fs.writeFile('public/sitemap.xml', sitemap);
+            console.log('📄 Sitemap written to public/sitemap.xml');
+        } catch (error) {
+            console.log('⚠️  Could not write sitemap to public/ (directory may not exist yet)');
+        }
         
         if (hasChanges) {
             console.log('✅ Smart sitemap generated with updated content dates');
