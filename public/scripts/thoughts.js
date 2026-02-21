@@ -32,7 +32,7 @@ const createThoughtCard = (post) => {
             </div>
             <h3 class="thought-title">${post.title}</h3>
             <div class="thought-excerpt">${post.excerpt}</div>
-            <a href="thoughts/${slug}.html" class="thought-link">Read More →</a>
+            <a href="/thoughts/${slug}.html" class="thought-link">Read More →</a>
         </article>
     `;
 };
@@ -40,15 +40,17 @@ const createThoughtCard = (post) => {
 // Function to load thoughts
 async function loadThoughts() {
     try {
-        // Determine if we're on the archive page
-        const isArchivePage = window.location.pathname.includes('thoughts.html');
-        
+        // Determine if we're on the archive page (supports both clean URLs and .html)
+        const path = window.location.pathname;
+        const isArchivePage = path.includes('thoughts.html') || path === '/thoughts' || path === '/thoughts/';
+
         // Try to load merged content first, fallback to original thoughts.json
+        // Use absolute paths to work from any page location
         let response;
         let data;
-        
+
         try {
-            response = await fetch('thoughts-merged.json');
+            response = await fetch('/thoughts-merged.json');
             if (response.ok) {
                 data = await response.json();
                 console.log('✅ Loaded merged content (local + Notion)');
@@ -57,7 +59,7 @@ async function loadThoughts() {
             }
         } catch (error) {
             console.log('📝 Falling back to local content only');
-            response = await fetch('thoughts.json');
+            response = await fetch('/thoughts.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
