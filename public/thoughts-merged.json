@@ -1,6 +1,14 @@
 {
   "thoughts": [
     {
+      "id": 35,
+      "title": "The Graveyard Gap: Why Restaurant Owners Know Exactly What to Do (And Still Can't Do It)",
+      "date": "2026-03-14",
+      "slug": "the-graveyard-gap-why-restaurant-owners-know-exactly-what-to-do-and-still-cant-do-it",
+      "excerpt": "Most restaurant owners know what they should be doing. The problem was never knowledge — it was bandwidth. That constraint just disappeared.",
+      "source": "local"
+    },
+    {
       "id": 34,
       "title": "Why Your Brain Resists Content—And How to Make It Your Most Valuable Asset",
       "date": "2022-02-15",
@@ -257,9 +265,9 @@
       "source": "local"
     }
   ],
-  "lastUpdated": "2025-08-09T15:08:20.974Z",
+  "lastUpdated": "2026-03-14T11:27:53.400Z",
   "sources": {
-    "local": 32,
+    "local": 33,
     "notion": 0
   }
 }
