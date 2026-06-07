@@ -1,6 +1,22 @@
 {
   "thoughts": [
     {
+      "id": 36,
+      "title": "Sharper or Duller?",
+      "date": "2026-06-07",
+      "slug": "sharper-or-duller",
+      "excerpt": "What running four AI agents before breakfast does to my brain, and whether it's sharpening or dulling me.",
+      "source": "local"
+    },
+    {
+      "id": 35,
+      "title": "The Graveyard Gap",
+      "date": "2026-03-14",
+      "slug": "the-graveyard-gap-why-restaurant-owners-know-exactly-what-to-do-and-still-cant-do-it",
+      "excerpt": "Most restaurant owners know what they should be doing. The problem was never knowledge — it was bandwidth. That constraint just disappeared.",
+      "source": "local"
+    },
+    {
       "id": 34,
       "title": "Why Your Brain Resists Content—And How to Make It Your Most Valuable Asset",
       "date": "2022-02-15",
@@ -257,9 +273,9 @@
       "source": "local"
     }
   ],
-  "lastUpdated": "2025-08-09T15:08:20.974Z",
+  "lastUpdated": "2026-06-07T16:09:16.532Z",
   "sources": {
-    "local": 32,
+    "local": 34,
     "notion": 0
   }
 }
