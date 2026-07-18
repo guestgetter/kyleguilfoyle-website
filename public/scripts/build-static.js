@@ -54,6 +54,7 @@ async function buildStatic() {
         'src/index.html',
         'src/404.html',
         'src/style.css',
+        'src/home.css',
         'src/about.css',
         'src/guide.css',
         'src/thoughts.json',
@@ -295,4 +296,4 @@ async function buildStatic() {
     console.log('\n✅ Build and validation complete! Site is ready for deployment.');
 }
 
-buildStatic().catch(console.error); 
+buildStatic().catch(console.error);

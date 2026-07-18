@@ -34,3 +34,31 @@
 ## Review target
 
 The page must score at least 7/10 on distinctiveness, hierarchy, craft, desire, honesty, brand fit, and mobile integrity at both 390px and 1440px. If the third review round still misses, reject the direction rather than polishing it indefinitely.
+
+## Review log
+
+### Round one
+
+- Rejected the desktop Regulars Loop because the step title and explanation collided.
+- Rejected the final portrait capture because lazy loading made the review nondeterministic.
+- Fixed both and rerendered mobile and desktop.
+
+### Round two
+
+- Corrected an inferred article date and summary against the source record.
+- Corrected the wordmark's accessible name after the browser audit caught a visible-label mismatch.
+- Kept the existing Microsoft Clarity analytics behavior unchanged. Its third-party cookies remain the only Best Practices audit failure.
+
+### Final rubric
+
+| Axis | Score | Reason |
+|---|---:|---|
+| Distinctiveness | 9 | The Regulars Loop, editorial scale, and marker annotation belong to this point of view. |
+| Hierarchy | 9 | Thesis first, operating loop second, lived proof third, then the body of work. |
+| Craft | 8 | Consistent type, spacing, alignment, hover, focus, and responsive behavior. |
+| Desire | 8 | Makes the operator's problem feel understood without promising an unsupported outcome. |
+| Honesty | 9 | Existing photographs, published writing, verified dates, and no invented metrics or proof. |
+| Brand fit | 8 | Warm operator energy with systems thinking, not restaurant wallpaper or agency polish. |
+| Mobile integrity | 9 | The 390px view is composed independently, with deliberate type scale and touch targets. |
+
+**Rejected from the baseline:** floating food emoji, gradient headline text, the transformation slider, unsupported outcome cards, and the generic feature-card rhythm.
