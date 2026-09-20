@@ -1,6 +1,14 @@
 {
   "thoughts": [
     {
+      "id": 37,
+      "title": "3 Topics I’m Exploring in My Life Right Now",
+      "date": "2026-09-20",
+      "slug": "3-topics-im-exploring-in-my-life-right-now",
+      "excerpt": "AI agents that broke the bank, the search for a better AI setup, and the oldschool advertising books I keep coming back to.",
+      "source": "local"
+    },
+    {
       "id": 36,
       "title": "Sharper or Duller?",
       "date": "2026-06-07",
@@ -273,9 +281,9 @@
       "source": "local"
     }
   ],
-  "lastUpdated": "2026-06-07T19:26:16.954Z",
+  "lastUpdated": "2026-09-20T13:11:22.794Z",
   "sources": {
-    "local": 34,
+    "local": 35,
     "notion": 0
   }
 }
