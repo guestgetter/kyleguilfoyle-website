@@ -1,7 +1,9 @@
 // Function to format date
 const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('en-US', options);
+    // Date-only strings parse as UTC, which displays a day early in North America.
+    const [year, month, day] = dateString.slice(0, 10).split('-').map(Number);
+    return new Date(year, month - 1, day).toLocaleDateString('en-US', options);
 };
 
 // Function to create a valid slug if one doesn't exist
@@ -96,4 +98,10 @@ async function loadThoughts() {
 }
 
 // Load thoughts when the page loads
-document.addEventListener('DOMContentLoaded', loadThoughts); 
+if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', loadThoughts);
+}
+
+if (typeof module !== 'undefined') {
+    module.exports = { formatDate };
+}

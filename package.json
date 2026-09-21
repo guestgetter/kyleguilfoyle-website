@@ -18,7 +18,7 @@
     "sitemap": "node scripts/generate-sitemap.js",
     "validate": "node scripts/validate-paths.js",
     "deploy": "node scripts/sync-and-deploy.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "TZ=America/Toronto node --test scripts/thoughts.test.js"
   },
   "repository": {
     "type": "git",

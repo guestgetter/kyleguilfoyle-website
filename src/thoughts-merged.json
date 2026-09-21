@@ -1,6 +1,14 @@
 {
   "thoughts": [
     {
+      "id": 38,
+      "title": "3 Resources Helping Me Learn AI",
+      "date": "2026-09-21",
+      "slug": "3-resources-helping-me-learn-ai",
+      "excerpt": "A free course, a level-headed YouTube channel, and a podcast full of super nerds exploring what comes next.",
+      "source": "local"
+    },
+    {
       "id": 37,
       "title": "3 Topics I’m Exploring in My Life Right Now",
       "date": "2026-09-20",
@@ -281,9 +289,9 @@
       "source": "local"
     }
   ],
-  "lastUpdated": "2026-09-20T13:17:19.091Z",
+  "lastUpdated": "2026-09-21T22:12:21.326Z",
   "sources": {
-    "local": 35,
+    "local": 36,
     "notion": 0
   }
 }
