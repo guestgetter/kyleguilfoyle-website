@@ -1,6 +1,14 @@
 {
   "thoughts": [
     {
+      "id": 40,
+      "title": "A Curriculum I’d Want to DEVOUR",
+      "date": "2026-09-27",
+      "slug": "a-curriculum-id-want-to-devour",
+      "excerpt": "I could barely get through my university readings. Now I’m 38 and building a curriculum I’d want to DEVOUR.",
+      "source": "local"
+    },
+    {
       "id": 39,
       "title": "Obvious Adams and the Store Nobody Could Find",
       "date": "2026-09-22",
@@ -297,9 +305,9 @@
       "source": "local"
     }
   ],
-  "lastUpdated": "2026-09-23T01:58:14.546Z",
+  "lastUpdated": "2026-09-27T12:57:59.903Z",
   "sources": {
-    "local": 37,
+    "local": 38,
     "notion": 0
   }
 }
