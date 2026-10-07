@@ -1,6 +1,14 @@
 {
   "thoughts": [
     {
+      "id": 41,
+      "title": "Just ONE Thing to Open",
+      "date": "2026-10-07",
+      "slug": "one-thing-to-open",
+      "excerpt": "Ten different tools to understand what’s happening. Then more work to do something about it. I’m building a Cockpit for Guest Getter.",
+      "source": "local"
+    },
+    {
       "id": 40,
       "title": "A Curriculum I’d Want to DEVOUR",
       "date": "2026-09-27",
@@ -305,9 +313,9 @@
       "source": "local"
     }
   ],
-  "lastUpdated": "2026-09-27T12:57:59.903Z",
+  "lastUpdated": "2026-10-07T13:28:32.832Z",
   "sources": {
-    "local": 38,
+    "local": 39,
     "notion": 0
   }
 }
