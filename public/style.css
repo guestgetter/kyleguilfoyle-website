@@ -2762,3 +2762,8 @@ body.no-scroll {
     font-size: 1.5rem;
     line-height: 1;
 }
+
+/* Responsive inline video in Thoughts. */
+.youtube-video { position: relative; width: 100%; aspect-ratio: 16 / 9; }
+.youtube-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.youtube-embed > img[hidden] { display: none !important; }
