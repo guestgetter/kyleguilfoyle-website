@@ -1,6 +1,14 @@
 {
   "thoughts": [
     {
+      "id": 42,
+      "title": "I want my business run by AI agents and tuned by me",
+      "date": "2026-10-08",
+      "slug": "tiny-little-machines-1",
+      "excerpt": "Episode 1 of Tiny Little Machines. A cockpit for the business, with AI agents doing the work and me tuning it.",
+      "source": "local"
+    },
+    {
       "id": 41,
       "title": "Just ONE Thing to Open",
       "date": "2026-10-07",
@@ -313,9 +321,9 @@
       "source": "local"
     }
   ],
-  "lastUpdated": "2026-10-07T13:28:32.832Z",
+  "lastUpdated": "2026-10-08T15:53:39.870Z",
   "sources": {
-    "local": 39,
+    "local": 40,
     "notion": 0
   }
 }
